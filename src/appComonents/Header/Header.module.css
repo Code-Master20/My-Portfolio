@@ -1,15 +1,22 @@
 .main-container {
   width: 100vw;
-  min-height: 3.5rem;
-  background-color: rgb(225, 202, 174);
+  min-height: 2.5rem;
+  background-color: rgb(201, 129, 41);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  padding: 0.5rem;
 }
 
 .brandlogo-container {
   width: fit-content;
+}
+
+.brandlogo-container img {
+  cursor: pointer;
+  max-width: 1.8rem;
+  max-height: 1.8rem;
 }
 
 .navigation-container-large {
@@ -24,4 +31,93 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* smoothness for bundle toggle button */
+
+.bundle-toggle {
+  font-size: 1.7rem;
+  fill: rgb(8, 243, 243);
+  transition: transform 0.3s ease, fill 0.2s ease;
+}
+.bundle-toggle:active {
+  fill: red;
+  transform: scale(1.2);
+}
+
+/* smoothness for cross-toggle button */
+.cross-toggle {
+  font-size: 1.5rem;
+  fill: rgb(8, 243, 243);
+  transition: transform 0.3s ease, fill 0.2s ease;
+}
+
+.cross-toggle:active {
+  fill: red;
+  transform: scale(1.2);
+}
+
+.navigation-container-small {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.3rem 1rem;
+  width: 70vw;
+}
+
+.view-adjustment {
+  border-radius: 0.8rem;
+  position: absolute;
+  z-index: 9999;
+  top: 3.599rem;
+  right: 0.2%;
+  background-color: rgba(6, 44, 168, 0.3);
+}
+
+.animation-toggle {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  0% {
+    position: fixed;
+    flex-direction: row;
+    justify-content: flex-start;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -9999;
+    top: 0rem;
+    right: 0.2%;
+    background-color: "";
+    border-radius: 1.5rem;
+    width: 30vw;
+  }
+
+  50% {
+    position: fixed;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    visibility: hidden;
+    opacity: 0.5;
+    z-index: -9999;
+    top: 1.4rem;
+    right: 0.2%;
+    background-color: rgba(168, 6, 9, 0.3);
+    border-radius: 1.2rem;
+    width: 50vw;
+  }
+
+  100% {
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    visibility: visible;
+    opacity: 1;
+    z-index: 9999;
+    top: 3.599rem;
+    right: 0.2%;
+    background-color: rgba(6, 44, 168, 0.3);
+    border-radius: 0.8rem;
+    width: 70vw;
+  }
 }
