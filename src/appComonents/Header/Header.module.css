@@ -1,0 +1,27 @@
+.main-container {
+  width: 100vw;
+  min-height: 3.5rem;
+  background-color: rgb(225, 202, 174);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.brandlogo-container {
+  width: fit-content;
+}
+
+.navigation-container-large {
+  width: max-content;
+  display: contents;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navigation-container-large a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
