@@ -8,6 +8,7 @@ import { GrProjects } from "react-icons/gr";
 import styles from "./Header.module.css";
 import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   // To track width of the page
@@ -37,11 +38,17 @@ export const Header = () => {
     animationToggle();
   }, 1);
 
+  //navigate to home on brandLogo click
+  const navigate = useNavigate();
+
   return (
     <>
       <nav className={styles["main-container"]}>
         {/* Web Logo Section */}
-        <div className={styles["brandlogo-container"]}>
+        <div
+          className={styles["brandlogo-container"]}
+          onClick={() => navigate("/")}
+        >
           <img src={Logo} alt="brand-logo" style={{ fill: "red" }} />
         </div>
         {/* Navigations Section */}
@@ -67,16 +74,44 @@ export const Header = () => {
               <div
                 className={`${styles["navigation-container-small"]} ${
                   styles["view-adjustment"]
-                } ${activated ? styles["animation-toggle"] : styles[""]} `}
+                } ${activated ? styles["animation-toggle"] : ""} `}
               >
                 {/* Home */}
-                <NavLink to="#">Home</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `${isActive ? styles["small-nav-active"] : ""}`
+                  }
+                >
+                  Home
+                </NavLink>
                 {/* About */}
-                <NavLink to="#">About</NavLink>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `${isActive ? styles["small-nav-active"] : ""}`
+                  }
+                >
+                  About
+                </NavLink>
                 {/* Projects */}
-                <NavLink to="#">Projects</NavLink>
+                <NavLink
+                  to="/projects"
+                  className={({ isActive }) =>
+                    `${isActive ? styles["small-nav-active"] : ""}`
+                  }
+                >
+                  Projects
+                </NavLink>
                 {/* Contact */}
-                <NavLink to="#">Contact</NavLink>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    `${isActive ? styles["small-nav-active"] : ""}`
+                  }
+                >
+                  Contact
+                </NavLink>
               </div>
             )}
           </>
@@ -85,26 +120,46 @@ export const Header = () => {
 
           <div className={styles["navigation-container-large"]}>
             {/* Home */}
-            <NavLink to="#">
-              <IoHomeOutline />
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `${isActive ? styles["active-nav"] : ""}`
+              }
+            >
+              <IoHomeOutline className={styles["home"]} />
               <span>Home</span>
             </NavLink>
 
             {/* About */}
-            <NavLink to="#">
-              <IoBookOutline />
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `${isActive ? styles["active-nav"] : ""}`
+              }
+            >
+              <IoBookOutline className={styles["about"]} />
               <span>About</span>
             </NavLink>
 
             {/* Projects */}
-            <NavLink to="#">
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                `${isActive ? styles["active-nav"] : ""}`
+              }
+            >
               <GrProjects />
               <span>Projects</span>
             </NavLink>
 
             {/* Contact */}
-            <NavLink to="#">
-              <FaRegMessage />
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                `${isActive ? styles["active-nav"] : ""}`
+              }
+            >
+              <FaRegMessage className={styles["contact"]} />
               <span>Contact</span>
             </NavLink>
           </div>

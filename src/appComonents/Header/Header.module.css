@@ -27,10 +27,38 @@
   align-items: center;
 }
 
+.active-nav :nth-child(1) {
+  color: rgb(255, 0, 0);
+}
+
+.active-nav :nth-child(2) {
+  color: rgb(255, 0, 0);
+}
+
+.small-nav-active {
+  color: red;
+}
+.small-nav-active:hover {
+  color: red;
+}
+
 .navigation-container-large a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: aqua;
+}
+
+.navigation-container-large a:nth-child(1) .home {
+  font-size: 1.35rem;
+}
+
+.navigation-container-large a:nth-child(2) .about {
+  font-size: 1.35rem;
+}
+
+.navigation-container-large a:last-child .contact {
+  font-size: 1.2rem;
 }
 
 /* smoothness for bundle toggle button */
