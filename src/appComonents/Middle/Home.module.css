@@ -1,0 +1,49 @@
+/* main container of home-page */
+.main-section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #b8b1cd;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.introductory-main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* img+ownerName and short intro of owner */
+.img-and-intro {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.2rem;
+}
+
+/* img and owner name */
+.img-container {
+  display: box;
+  flex-direction: column;
+  background-color: antiquewhite;
+}
+
+.img-container img {
+  width: 200px;
+  height: 200px;
+}
+.owner-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+}
+
+/* details of this current project */
+.this-project-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
