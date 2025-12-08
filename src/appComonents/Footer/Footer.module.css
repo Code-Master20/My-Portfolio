@@ -1,5 +1,7 @@
 .main-container-sec {
+  margin-bottom: auto;
+  margin-top: 0;
   min-width: 100vw;
-  min-height: 20vh;
-  background-color: hsla(0, 20%, 40%, 0.6);
+  min-height: auto;
+  z-index: 999;
 }

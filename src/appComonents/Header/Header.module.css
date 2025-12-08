@@ -3,6 +3,7 @@
   min-height: 6vh;
   max-height: 6vh;
   background-color: rgb(201, 129, 41);
+  z-index: 999;
 }
 
 .main-container div {
@@ -99,7 +100,7 @@
   min-width: 60vw;
   position: absolute;
   z-index: 9999;
-  top: 4rem;
+  top: 4.5rem;
   right: 1%;
   background-color: rgba(6, 44, 168, 0.5);
   display: flex;
@@ -137,7 +138,7 @@
     visibility: hidden;
     opacity: 0;
     z-index: -9999;
-    top: 0.8rem;
+    top: 1rem;
     right: 0;
     background-color: "";
     border-radius: 0.8rem;
@@ -151,7 +152,7 @@
     visibility: hidden;
     opacity: 0.5;
     z-index: -9999;
-    top: 1rem;
+    top: 2rem;
     right: 0.2%;
     background-color: rgba(168, 6, 9, 0.8);
     border-radius: 1.2rem;
@@ -166,7 +167,7 @@
     min-width: 60vw;
     position: absolute;
     z-index: 9999;
-    top: 4rem;
+    top: 4.5rem;
     right: 1%;
     background-color: rgba(6, 44, 168, 0.5);
     display: flex;

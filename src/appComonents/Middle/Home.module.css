@@ -1,9 +1,12 @@
 /* main container of home-page */
 
 .main-section {
+  margin-bottom: auto;
   min-width: 100vw;
-  min-height: 74vh;
+  height: auto;
   background-color: hsla(301, 69%, 28%, 0.4);
+  padding-bottom: 1rem;
+  z-index: 999;
 }
 
 .main-section div {
@@ -11,12 +14,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.2rem;
+  row-gap: 0.8rem;
 }
 
 .owner-info {
   margin-top: 0.5rem;
-  padding: 0 0.4rem;
+  padding: 0 0.5rem;
   flex: 2;
 }
 
@@ -55,6 +58,7 @@
   color: white;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
+
 .dev-img-container > div :nth-child(3) {
   font-size: 0.9rem;
   font-weight: 800;
@@ -73,7 +77,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* background-color: blue; */
 }
 
 .dev-info-container > div * {
@@ -99,19 +102,71 @@
   font-weight: 800;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .dev-info-container div :nth-child(5) {
   font-size: 1.4rem;
   font-weight: 800;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .this-info {
-  padding: 0 0.4rem;
-  background-color: blueviolet;
+  padding: 0 0.5rem;
   flex: 1;
 }
 
+.this-info div {
+  margin: 0;
+}
+
+.this-info div * {
+  color: white;
+  display: inline;
+  margin: 0;
+}
+
+.this-info div :first-child {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.this-info div :nth-child(2) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+.this-info div :nth-child(3) {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
 .projects-info {
-  padding: 0 0.4rem;
-  background-color: brown;
   flex: 1.5;
+  width: auto;
+  margin: auto 1rem;
+}
+
+.projects-info > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 1rem;
+  row-gap: 0.7rem;
+}
+
+.projects-info > div * {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 9.5rem;
+  height: 10rem;
 }
