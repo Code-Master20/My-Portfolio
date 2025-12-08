@@ -1,0 +1,5 @@
+.main-container-sec {
+  min-width: 100vw;
+  min-height: 20vh;
+  background-color: hsla(0, 20%, 40%, 0.6);
+}

@@ -1,49 +1,117 @@
 /* main container of home-page */
+
 .main-section {
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background-color: #b8b1cd;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  min-width: 100vw;
+  min-height: 74vh;
+  background-color: hsla(301, 69%, 28%, 0.4);
 }
 
-.introductory-main-container {
+.main-section div {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-/* img+ownerName and short intro of owner */
-.img-and-intro {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   gap: 0.2rem;
 }
 
-/* img and owner name */
-.img-container {
-  display: box;
-  flex-direction: column;
-  background-color: antiquewhite;
+.owner-info {
+  margin-top: 0.5rem;
+  padding: 0 0.4rem;
+  flex: 2;
 }
 
-.img-container img {
-  width: 200px;
-  height: 200px;
-}
-.owner-name {
+.owner-info div {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8rem;
-}
-
-/* details of this current project */
-.this-project-details {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  column-gap: 2rem;
+}
+
+.dev-img-container div {
+  height: fit-content;
+  background-color: rgba(250, 1, 196, 0.826);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  box-shadow: 0rem 4rem 7rem rgba(0, 0, 0, 0.4);
+  padding: 0 0.2rem 1rem 0.2rem;
+}
+
+.dev-img-container div img {
+  width: 11rem;
+  height: 12rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.dev-img-container > div :nth-child(2) {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin: auto;
+  margin: 0.2rem auto;
+  color: white;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+.dev-img-container > div :nth-child(3) {
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin: auto;
+  margin: 0.2rem auto;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.dev-info-container {
+}
+
+.dev-info-container > div {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* background-color: blue; */
+}
+
+.dev-info-container > div * {
+  margin: 0rem auto 0rem 0rem;
+  color: white;
+}
+
+.dev-info-container div :first-child {
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  font-weight: 900;
+  text-shadow: 2px 3px 3px rgba(5, 33, 245, 0.4);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dev-info-container div :nth-child(3) {
+  margin-bottom: 2.2rem;
+  font-size: 2rem;
+}
+
+.dev-info-container div :nth-child(4) {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.dev-info-container div :nth-child(5) {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.this-info {
+  padding: 0 0.4rem;
+  background-color: blueviolet;
+  flex: 1;
+}
+
+.projects-info {
+  padding: 0 0.4rem;
+  background-color: brown;
+  flex: 1.5;
 }

@@ -1,0 +1,10 @@
+html {
+  font-size: 62.5%;
+  /* now 1rem = 10px  for children*/
+}
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}

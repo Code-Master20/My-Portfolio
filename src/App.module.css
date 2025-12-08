@@ -4,5 +4,5 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.1rem;
+  background-color: rgba(234, 146, 193, 0.3);
 }

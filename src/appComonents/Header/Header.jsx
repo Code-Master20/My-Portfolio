@@ -12,13 +12,14 @@ import { useNavigate } from "react-router-dom";
 
 export const Header = () => {
   // To track width of the page
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(window.outerWidth);
   useEffect(() => {
     const trackWidth = () => {
-      setWidth(window.innerWidth);
+      setWidth(window.outerWidth);
     };
     window.addEventListener("resize", trackWidth);
   }, []);
+  console.log(width);
 
   //functionality for toggling cross- and equalTo-buttons for mobile devices
   const [toggled, setToggled] = useState(false);
@@ -44,18 +45,18 @@ export const Header = () => {
   return (
     <>
       <nav className={styles["main-container"]}>
-        {/* Web Logo Section */}
-        <div
-          className={styles["brandlogo-container"]}
-          onClick={() => navigate("/")}
-        >
-          <img src={Logo} alt="brand-logo" style={{ fill: "red" }} />
-        </div>
-        {/* Navigations Section */}
+        <div>
+          {/* Web Logo Section */}
+          <div
+            className={styles["brandlogo-container"]}
+            onClick={() => navigate("/")}
+          >
+            <img src={Logo} alt="brand-logo" style={{ fill: "red" }} />
+          </div>
+          {/* Navigations Section */}
 
-        {width < 600 ? (
-          // for small devices and width <= 600px
-          <>
+          {width < 600 ? (
+            // cross and bundle buttons vissible for small devices width < 600px
             <div>
               {toggled ? (
                 <GiTireIronCross
@@ -69,102 +70,101 @@ export const Header = () => {
                 />
               )}
             </div>
+          ) : (
+            // for large devices and width >= 600px
 
-            {toggled == true && (
-              <div
-                className={`${styles["navigation-container-small"]} ${
-                  styles["view-adjustment"]
-                } ${activated ? styles["animation-toggle"] : ""} `}
+            <div className={styles["navigation-container-large"]}>
+              {/* Home */}
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  `${isActive ? styles["active-nav"] : ""}`
+                }
               >
-                {/* Home */}
-                <NavLink
-                  to="/"
-                  className={({ isActive }) =>
-                    `${isActive ? styles["small-nav-active"] : ""}`
-                  }
-                >
-                  Home
-                </NavLink>
-                {/* About */}
-                <NavLink
-                  to="/about"
-                  className={({ isActive }) =>
-                    `${isActive ? styles["small-nav-active"] : ""}`
-                  }
-                >
-                  About
-                </NavLink>
-                {/* Projects */}
-                <NavLink
-                  to="/projects"
-                  className={({ isActive }) =>
-                    `${isActive ? styles["small-nav-active"] : ""}`
-                  }
-                >
-                  Projects
-                </NavLink>
-                {/* Contact */}
-                <NavLink
-                  to="/contact"
-                  className={({ isActive }) =>
-                    `${isActive ? styles["small-nav-active"] : ""}`
-                  }
-                >
-                  Contact
-                </NavLink>
-              </div>
-            )}
-          </>
-        ) : (
-          // for large devices and width >= 600px
+                <IoHomeOutline className={styles["home"]} />
+                <span>Home</span>
+              </NavLink>
 
-          <div className={styles["navigation-container-large"]}>
-            {/* Home */}
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `${isActive ? styles["active-nav"] : ""}`
-              }
-            >
-              <IoHomeOutline className={styles["home"]} />
-              <span>Home</span>
-            </NavLink>
+              {/* About */}
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  `${isActive ? styles["active-nav"] : ""}`
+                }
+              >
+                <IoBookOutline className={styles["about"]} />
+                <span>About</span>
+              </NavLink>
 
-            {/* About */}
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `${isActive ? styles["active-nav"] : ""}`
-              }
-            >
-              <IoBookOutline className={styles["about"]} />
-              <span>About</span>
-            </NavLink>
+              {/* Projects */}
+              <NavLink
+                to="/projects"
+                className={({ isActive }) =>
+                  `${isActive ? styles["active-nav"] : ""}`
+                }
+              >
+                <GrProjects className={styles["projects"]} />
+                <span>Projects</span>
+              </NavLink>
 
-            {/* Projects */}
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                `${isActive ? styles["active-nav"] : ""}`
-              }
-            >
-              <GrProjects />
-              <span>Projects</span>
-            </NavLink>
-
-            {/* Contact */}
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `${isActive ? styles["active-nav"] : ""}`
-              }
-            >
-              <FaRegMessage className={styles["contact"]} />
-              <span>Contact</span>
-            </NavLink>
-          </div>
-        )}
+              {/* Contact */}
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  `${isActive ? styles["active-nav"] : ""}`
+                }
+              >
+                <FaRegMessage className={styles["contact"]} />
+                <span>Contact</span>
+              </NavLink>
+            </div>
+          )}
+        </div>
       </nav>
+      {toggled == true && (
+        <div
+          className={`${styles["navigation-container-small"]} ${
+            activated ? styles["animation-toggle"] : ""
+          } `}
+        >
+          {/* Home */}
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `${isActive ? styles["small-nav-active"] : ""}`
+            }
+          >
+            Home
+          </NavLink>
+          {/* About */}
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              `${isActive ? styles["small-nav-active"] : ""}`
+            }
+          >
+            About
+          </NavLink>
+          {/* Projects */}
+          <NavLink
+            to="/projects"
+            className={({ isActive }) =>
+              `${isActive ? styles["small-nav-active"] : ""}`
+            }
+          >
+            Projects
+          </NavLink>
+          {/* Contact */}
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              `${isActive ? styles["small-nav-active"] : ""}`
+            }
+          >
+            Contact
+          </NavLink>
+        </div>
+      )}
     </>
   );
 };

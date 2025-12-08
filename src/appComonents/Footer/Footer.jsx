@@ -1,3 +1,4 @@
+import styles from "./Footer.module.css";
 export const Footer = () => {
-  return <div>footer</div>;
+  return <div className={`${styles["main-container-sec"]}`}>footer</div>;
 };
