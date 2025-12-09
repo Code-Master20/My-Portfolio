@@ -1,10 +1,14 @@
 /* main container of home-page */
+* {
+  margin: 0;
+  padding: 0;
+}
 
 .main-section {
   margin-bottom: auto;
   min-width: 99vw;
   height: auto;
-  background-color: hsla(301, 69%, 28%, 0.4);
+  background-color: hsla(301, 69%, 28%, 0.5);
   padding-bottom: 5rem;
   z-index: 999;
 }
@@ -37,8 +41,7 @@
   flex-direction: column;
   align-items: center;
   row-gap: 0;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-radius: 1rem 2rem / 2rem 4rem;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
   padding: 0 0.2rem 1rem 0.2rem;
 }
@@ -47,7 +50,7 @@
   width: 11rem;
   height: 12rem;
   border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  border-top-right-radius: 2.4rem;
 }
 
 .dev-img-container > div :nth-child(2) {

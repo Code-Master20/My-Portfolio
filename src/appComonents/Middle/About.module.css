@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-section-one {
+  background-color: hsla(301, 69%, 28%, 0.5);
+  height: auto;
+  min-width: 100vw;
+}
+
+.main-section-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.dev-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1.5px solid rgba(26, 25, 25, 0.2);
+}
+
+.dev-intro > div {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.dev-img-container {
+  display: flex;
+  justify-content: space-between;
+}
+.dev-img-container > :first-child {
+  color: white;
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0px 4px 2px rgba(0, 0, 0, 0.5);
+}
+.dev-img-container > :last-child {
+  width: 14rem;
+  height: 16rem;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 1.5rem 3rem / 3rem 6rem;
+}
+
+.dev-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.dev-info-container > * {
+  color: white;
+}
+.dev-info-container > :first-child {
+  font-size: 2.4rem;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+}
+.dev-info-container > :nth-child(2) {
+  font-size: 1.8rem;
+  font-weight: 900;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.dev-info-container > :last-child {
+  font-size: 1.5rem;
+}
+
+.dev-journey {
+  background-color: blue;
+}
+.dev-skills {
+  background-color: blueviolet;
+}
+.dev-experience {
+  background-color: burlywood;
+}
