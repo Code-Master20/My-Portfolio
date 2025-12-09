@@ -41,20 +41,22 @@ export const Home = () => {
         {/* this current project info */}
         <div className={`${styles["this-info"]}`}>
           <div>
-            <h1>About This Project :</h1>
-            <p>
-              This is a fully responsive personal portfolio website built using
-              HTML, CSS, TailwindCSS, JavaScript, and ReactJS. The design adapts
-              to all screen sizes, making it device-width and height
-              independent. The site showcases my skills, projects, and
-              experience in a clean and modern layout.
-            </p>
-            <p>
-              I also added a contact form where users can send me a message. For
-              this, I used Node.js, Express, MongoDB, and Mongoose to store the
-              messages, along with a free API integration for additional
-              projects merged with this current project.
-            </p>
+            <div>
+              <h1>About This Project :</h1>
+              <p>
+                This is a fully responsive personal portfolio website built
+                using HTML, CSS, TailwindCSS, JavaScript, and ReactJS. The
+                design adapts to all screen sizes, making it device-width and
+                height independent. The site showcases my skills, projects, and
+                experience in a clean and modern layout.
+              </p>
+              <p>
+                I also added a contact form where users can send me a message.
+                For this, I used Node.js, Express, MongoDB, and Mongoose to
+                store the messages, along with a free API integration for
+                additional projects merged with this current project.
+              </p>
+            </div>
           </div>
         </div>
         {/* My other projects' info */}

@@ -2,10 +2,10 @@
 
 .main-section {
   margin-bottom: auto;
-  min-width: 100vw;
+  min-width: 99vw;
   height: auto;
   background-color: hsla(301, 69%, 28%, 0.4);
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
   z-index: 999;
 }
 
@@ -39,7 +39,7 @@
   row-gap: 0;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  box-shadow: 0rem 4rem 7rem rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
   padding: 0 0.2rem 1rem 0.2rem;
 }
 
@@ -68,8 +68,8 @@
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-.dev-info-container {
-}
+/* .dev-info-container {
+} */
 
 .dev-info-container > div {
   height: fit-content;
@@ -119,26 +119,26 @@
   margin: 0;
 }
 
-.this-info div * {
+.this-info > div > div * {
   color: white;
   display: inline;
   margin: 0;
 }
 
-.this-info div :first-child {
+.this-info > div > div > :first-child {
   font-size: 2rem;
   font-weight: 800;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.this-info div :nth-child(2) {
+.this-info > div > div > :nth-child(2) {
   font-size: 1.5rem;
   font-weight: 700;
   hyphens: auto;
   overflow-wrap: break-word;
 }
 
-.this-info div :nth-child(3) {
+.this-info > div > div > :nth-child(3) {
   margin-top: 1rem;
   font-size: 1.5rem;
   font-weight: 700;
@@ -169,4 +169,116 @@
   padding: 0;
   width: 9.5rem;
   height: 10rem;
+  border-radius: 1rem;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 1;
+}
+
+/* On clicking: dim all children */
+.projects-info > div:has(*:active) > * {
+  opacity: 0.3;
+}
+
+.projects-info > div *:active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (min-width: 768px) {
+  .owner-info > div {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10rem;
+  }
+
+  .dev-img-container > div > img {
+    width: 20rem;
+    height: 22rem;
+  }
+
+  .dev-img-container > div > :nth-child(2) {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+
+  .dev-img-container > div > :nth-child(3) {
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
+
+  .dev-info-container > div > :first-child {
+    font-size: 3rem;
+    background-image: url("../../assets/Modern-Todo-App.png"); /* image you want inside text */
+    background-size: cover;
+    background-position: center;
+    color: transparent; /* make the text transparent */
+    -webkit-background-clip: text; /* for Chrome, Safari */
+    background-clip: text; /* standard */
+  }
+
+  .dev-info-container > div > :nth-child(2) {
+    font-size: 2rem;
+  }
+
+  .dev-info-container > div > :nth-child(3) {
+    font-size: 2.2rem;
+  }
+  .dev-info-container > div > :nth-child(5) {
+    font-size: 1.6rem;
+    max-width: 45rem;
+  }
+
+  .this-info {
+    width: 100vw;
+  }
+  .this-info > div {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .this-info > div > div {
+    width: 75vw;
+  }
+
+  .this-info > div > div > :first-child {
+    font-size: 2.5rem;
+  }
+
+  .this-info > div > div > :nth-child(2) {
+    font-size: 1.8rem;
+    width: 90%;
+  }
+  .this-info > div > div > :nth-child(3) {
+    font-size: 1.8rem;
+    width: 90%;
+  }
+
+  .projects-info > div {
+    margin-top: 1.5rem;
+  }
+
+  .projects-info > div * {
+    width: 13rem;
+    height: 14.5rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+  }
+
+  .projects-info > div *:hover {
+    transform: translateY(-4px);
+  }
+
+  .projects-info > div:has(*:active) > * {
+    opacity: 0.3;
+  }
+
+  .projects-info > div *:active {
+    opacity: 1;
+    transform: scale(1.1);
+  }
 }
