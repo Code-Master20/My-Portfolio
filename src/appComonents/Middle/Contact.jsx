@@ -18,19 +18,68 @@ export const Contact = () => {
     window.addEventListener("resize", trackWidth);
   }, []);
 
+  //Connecting to the backend
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!message.trim()) {
+      setError("Message cannot be empty");
+      return;
+    }
+
+    setLoading(true);
+    setError("");
+    setSuccess(false);
+
+    try {
+      const res = await fetch("/api/sendMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message }),
+      });
+
+      const data = await res.json();
+      console.log(data);
+
+      if (!res.ok) {
+        throw new Error(data.error || "Something went wrong");
+      }
+
+      setSuccess(true);
+      setMessage("");
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className={styles["main-section-one"]}>
       <section className={styles["main-section-two"]}>
         <div className={styles["main-section-child"]}>
           <h1>Contact me following the below options</h1>
           <div className={styles["contact-form-container"]}>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div>
                 <div>
                   <label htmlFor="message">message us :</label>
-                  <textarea name="" id="message"></textarea>
+                  <textarea
+                    name=""
+                    id="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Write your message here..."
+                  ></textarea>
                 </div>
-                <button>send message</button>
+                <button type="submit">send message</button>
               </div>
             </form>
             {width > 767.99 && (
