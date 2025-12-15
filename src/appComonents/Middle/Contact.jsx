@@ -76,7 +76,7 @@ export const Contact = () => {
                     id="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Write your message here..."
+                    placeholder="Please mention your email/phone number while write me"
                   ></textarea>
                 </div>
                 <button type="submit">send message</button>
