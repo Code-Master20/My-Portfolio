@@ -19,6 +19,16 @@ export const Projects = () => {
     }
   }, []);
 
+  //temporary reflect to users for project link
+  const [isProjectActive, setIsProjectActive] = useState(true);
+  const handleRedirect = () => {
+    console.log("helllo");
+    setIsProjectActive((prev) => !prev);
+    setTimeout(() => {
+      setIsProjectActive((prev) => !prev);
+    }, 2500);
+  };
+
   //navigation for different projects on learn more clicked
   const navigate = useNavigate();
   const [parentPageActive, setParentPageActive] = useState(true);
@@ -32,13 +42,36 @@ export const Projects = () => {
     <>
       {parentPageActive === true && (
         <main className={`${styles["main-section-one"]}`}>
+          {isProjectActive === false && (
+            <div
+              style={{
+                position: "absolute",
+                zIndex: "99999",
+                backgroundColor: "rgba(0,0,0,0)",
+                color: "red",
+                padding: "1rem",
+                top: "49%",
+                left: "38%",
+                fontWeight: "600",
+                fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+                fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
+                borderRadius: "1rem",
+              }}
+            >
+              project is under development
+            </div>
+          )}
           <div>
             <h1>My All Projects' lists :</h1>
           </div>
           <section className={`${styles["main-section-two"]}`} ref={parentRef}>
             {/* <div className={`${styles["main-section-child"]}`}> */}
             <div>
-              <img src={classMateAppImg} alt="" />
+              <img
+                src={classMateAppImg}
+                alt=""
+                onDoubleClick={handleRedirect}
+              />
               <div>
                 <h1>classMate</h1>
                 <button
@@ -51,7 +84,7 @@ export const Projects = () => {
               </div>
             </div>
             <div>
-              <img src={mayRigAppImg} alt="" />
+              <img src={mayRigAppImg} alt="" onDoubleClick={handleRedirect} />
               <div>
                 <h1>mayRig</h1>
                 <button
@@ -64,7 +97,7 @@ export const Projects = () => {
               </div>
             </div>
             <div>
-              <img src={weatherAppImg} alt="" />
+              <img src={weatherAppImg} alt="" onDoubleClick={handleRedirect} />
               <div>
                 <h1>letsForecast</h1>
                 <button
@@ -77,7 +110,11 @@ export const Projects = () => {
               </div>
             </div>
             <div>
-              <img src={weCodeTogetherAppImg} alt="" />
+              <img
+                src={weCodeTogetherAppImg}
+                alt=""
+                onDoubleClick={handleRedirect}
+              />
               <div>
                 <h1>weCode Together</h1>
                 <button
@@ -90,7 +127,11 @@ export const Projects = () => {
               </div>
             </div>
             <div>
-              <img src={technoTalkAppImg} alt="" />
+              <img
+                src={technoTalkAppImg}
+                alt=""
+                onDoubleClick={handleRedirect}
+              />
               <div>
                 <h1>techTalk</h1>
                 <button
@@ -103,7 +144,11 @@ export const Projects = () => {
               </div>
             </div>
             <div>
-              <img src={modernTodoAppImg} alt="" />
+              <img
+                src={modernTodoAppImg}
+                alt=""
+                onDoubleClick={handleRedirect}
+              />
               <div>
                 <h1>doLists</h1>
                 <button
