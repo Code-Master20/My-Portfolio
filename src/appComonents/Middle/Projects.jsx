@@ -54,35 +54,65 @@ export const Projects = () => {
               <img src={mayRigAppImg} alt="" />
               <div>
                 <h1>mayRig</h1>
-                <button>learn more</button>
+                <button
+                  onClick={() => {
+                    handleNavigate("may-rig");
+                  }}
+                >
+                  learn more
+                </button>
               </div>
             </div>
             <div>
               <img src={weatherAppImg} alt="" />
               <div>
                 <h1>letsForecast</h1>
-                <button>learn more</button>
+                <button
+                  onClick={() => {
+                    handleNavigate("lets-forecast");
+                  }}
+                >
+                  learn more
+                </button>
               </div>
             </div>
             <div>
               <img src={weCodeTogetherAppImg} alt="" />
               <div>
                 <h1>weCode Together</h1>
-                <button>learn more</button>
+                <button
+                  onClick={() => {
+                    handleNavigate("we-code-together");
+                  }}
+                >
+                  learn more
+                </button>
               </div>
             </div>
             <div>
               <img src={technoTalkAppImg} alt="" />
               <div>
                 <h1>techTalk</h1>
-                <button>learn more</button>
+                <button
+                  onClick={() => {
+                    handleNavigate("techno-talk");
+                  }}
+                >
+                  learn more
+                </button>
               </div>
             </div>
             <div>
               <img src={modernTodoAppImg} alt="" />
               <div>
                 <h1>doLists</h1>
-                <button>learn more</button>
+                <button
+                  onClick={() => {
+                    handleNavigate("do-lists");
+                  }}
+                >
+                  learn more
+                </button>
               </div>
             </div>
             {/* </div> */}
