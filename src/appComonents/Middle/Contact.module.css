@@ -1,0 +1,301 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main-section-one {
+  width: 100vw;
+  align-self: center;
+  background-color: hsla(301, 69%, 28%, 0.5);
+}
+
+.main-section-two {
+  width: 100vw;
+  height: 100%;
+  padding: 0.5 0.5rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.main-section-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+  justify-content: space-around;
+}
+
+.main-section-child > :first-child {
+  color: white;
+  font-size: clamp(1.5rem, 4vw, 4rem);
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0px 1.5px 3px rgba(0, 0, 0, 0.5);
+  text-transform: capitalize;
+}
+
+.contact-form-container {
+  min-width: 90vw;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form-container > form > div {
+  min-width: 25rem;
+  background-color: rgba(227, 4, 239, 0.748);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  box-shadow: 0px 1.5px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+}
+
+.contact-form-container > form > div > div {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.contact-form-container > form > div button {
+  min-width: 10rem;
+  padding: 0.3rem 0.8rem;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  background-color: blue;
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-form-container > form > div button:active {
+  transform: scale(1.05);
+  background-color: rgb(3, 3, 111);
+}
+
+.contact-form-container > form > div > div label {
+  color: white;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-form-container > form > div > div textarea {
+  min-height: 13rem;
+  resize: none;
+  padding: 0.3rem;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+}
+
+.my-contact-details {
+  min-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-contact-details > div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+.my-contact-details > div h1 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  text-transform: capitalize;
+  color: white;
+}
+
+.my-contact-details > div ol:not(li a) {
+  color: white;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+}
+
+.my-contact-details > div ol > li a {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  text-decoration: none;
+  width: fit-content;
+  transition: color 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.4rem;
+}
+.my-contact-details > div ol > li a :first-child {
+  font-size: clapm(1.3rem, 4vw, 1.8rem);
+}
+
+.my-contact-details > div ol > li a:active {
+  color: white;
+}
+
+.social-media-container {
+  min-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-media-container > div {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
+.social-media-container > div h1 {
+  color: white;
+  text-transform: capitalize;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+}
+
+.social-media-container > div div {
+  min-width: 50vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  flex: 1;
+}
+
+.social-media-container > div div > article {
+  width: 8rem;
+  height: auto;
+  background-color: rgba(255, 0, 191, 0.6);
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in, transform 0.3s ease;
+}
+
+.social-media-container > div div > article:hover {
+  box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.social-media-container > div div > article:active {
+  transform: scale(1.04);
+}
+
+.social-media-container > div div > article span {
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+}
+
+.social-media-container > div div > article a {
+  text-decoration: none;
+  color: white;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.social-media-container > div div > article a:active {
+  color: black;
+}
+
+@media (min-height: 250px) {
+  .main-section-one {
+    height: 73.2rem;
+  }
+}
+
+@media (min-height: 950px) {
+  .main-section-one {
+    height: 91.2rem;
+  }
+}
+
+@media (min-height: 1200px) {
+  .main-section-one {
+    height: 110rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .img-container img {
+    width: 23rem;
+    height: 21rem;
+    border-radius: 1rem;
+    box-shadow: 0px 1.5px 1px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    margin-left: 2rem;
+  }
+
+  .img-container img:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (min-width: 767.99px) {
+  .main-section-one {
+    height: auto;
+    padding-bottom: 2rem;
+  }
+  .contact-form-container {
+    min-width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2rem;
+    margin-bottom: auto;
+    margin-top: 4rem;
+  }
+
+  .contact-form-container > form > div {
+    min-width: 40rem;
+    row-gap: 1rem;
+  }
+  .contact-form-container > form > div > div textarea {
+    min-height: 20rem;
+    resize: none;
+    padding: 0.5rem;
+  }
+  .contact-form-container > form > div button {
+    min-width: 10rem;
+    padding: 0.8rem 1rem;
+  }
+
+  .my-contact-details {
+    margin-bottom: auto;
+  }
+  .my-contact-details > div h1 {
+    word-spacing: 2rem;
+  }
+
+  .social-media-container {
+    margin-bottom: auto;
+  }
+  .social-media-container > div h1 {
+    word-spacing: 2rem;
+  }
+  .social-media-container > div div {
+    column-gap: 1rem;
+  }
+
+  .social-media-container > div div > article {
+    width: 14rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* @media (min-width: 1023.99px) {
+
+} */
