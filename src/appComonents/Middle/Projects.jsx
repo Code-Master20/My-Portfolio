@@ -6,6 +6,7 @@ import technoTalkAppImg from "../../assets/Techno-Talk-Pvt-Ltd.png";
 import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
 import { useRef, useEffect, useState } from "react";
+import { useNavigate, Outlet } from "react-router-dom";
 
 export const Projects = () => {
   const parentRef = useRef(null);
@@ -18,57 +19,78 @@ export const Projects = () => {
     }
   }, []);
 
+  //navigation for different projects on learn more clicked
+  const navigate = useNavigate();
+  const [parentPageActive, setParentPageActive] = useState(true);
+
+  const handleNavigate = (navVal) => {
+    setParentPageActive((prev) => !prev);
+    navigate(`/projects/${navVal}`);
+  };
+
   return (
-    <main className={`${styles["main-section-one"]}`}>
-      <div>
-        <h1>My All Projects' lists :</h1>
-      </div>
-      <section className={`${styles["main-section-two"]}`} ref={parentRef}>
-        {/* <div className={`${styles["main-section-child"]}`}> */}
-        <div>
-          <img src={classMateAppImg} alt="" />
+    <>
+      {parentPageActive === true && (
+        <main className={`${styles["main-section-one"]}`}>
           <div>
-            <h1>classMate</h1>
-            <button>learn more</button>
+            <h1>My All Projects' lists :</h1>
           </div>
-        </div>
-        <div>
-          <img src={mayRigAppImg} alt="" />
-          <div>
-            <h1>mayRig</h1>
-            <button>learn more</button>
-          </div>
-        </div>
-        <div>
-          <img src={weatherAppImg} alt="" />
-          <div>
-            <h1>letsForecast</h1>
-            <button>learn more</button>
-          </div>
-        </div>
-        <div>
-          <img src={weCodeTogetherAppImg} alt="" />
-          <div>
-            <h1>weCode Together</h1>
-            <button>learn more</button>
-          </div>
-        </div>
-        <div>
-          <img src={technoTalkAppImg} alt="" />
-          <div>
-            <h1>techTalk</h1>
-            <button>learn more</button>
-          </div>
-        </div>
-        <div>
-          <img src={modernTodoAppImg} alt="" />
-          <div>
-            <h1>doLists</h1>
-            <button>learn more</button>
-          </div>
-        </div>
-        {/* </div> */}
-      </section>
-    </main>
+          <section className={`${styles["main-section-two"]}`} ref={parentRef}>
+            {/* <div className={`${styles["main-section-child"]}`}> */}
+            <div>
+              <img src={classMateAppImg} alt="" />
+              <div>
+                <h1>classMate</h1>
+                <button
+                  onClick={() => {
+                    handleNavigate("class-mate");
+                  }}
+                >
+                  learn more
+                </button>
+              </div>
+            </div>
+            <div>
+              <img src={mayRigAppImg} alt="" />
+              <div>
+                <h1>mayRig</h1>
+                <button>learn more</button>
+              </div>
+            </div>
+            <div>
+              <img src={weatherAppImg} alt="" />
+              <div>
+                <h1>letsForecast</h1>
+                <button>learn more</button>
+              </div>
+            </div>
+            <div>
+              <img src={weCodeTogetherAppImg} alt="" />
+              <div>
+                <h1>weCode Together</h1>
+                <button>learn more</button>
+              </div>
+            </div>
+            <div>
+              <img src={technoTalkAppImg} alt="" />
+              <div>
+                <h1>techTalk</h1>
+                <button>learn more</button>
+              </div>
+            </div>
+            <div>
+              <img src={modernTodoAppImg} alt="" />
+              <div>
+                <h1>doLists</h1>
+                <button>learn more</button>
+              </div>
+            </div>
+            {/* </div> */}
+          </section>
+        </main>
+      )}
+
+      <Outlet setParentPageActive={setParentPageActive} />
+    </>
   );
 };
