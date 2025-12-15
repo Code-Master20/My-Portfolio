@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "mongoose": "^9.0.1",
     "onnxruntime-web": "^1.23.2",
     "react": "^19.2.0",
