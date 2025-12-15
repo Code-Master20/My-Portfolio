@@ -10,6 +10,7 @@ import {
 import { MdEmail, MdCall } from "react-icons/md";
 
 export const Contact = () => {
+  //current screen-width tracker
   const [width, setWidth] = useState(window.outerWidth);
   useEffect(() => {
     const trackWidth = () => {
