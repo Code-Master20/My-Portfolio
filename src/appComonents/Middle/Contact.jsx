@@ -70,7 +70,7 @@ export const Contact = () => {
             <form onSubmit={handleSubmit}>
               <div>
                 <div>
-                  <label htmlFor="message">message us :</label>
+                  <label htmlFor="message">drop me a message :</label>
                   <textarea
                     name=""
                     id="message"
