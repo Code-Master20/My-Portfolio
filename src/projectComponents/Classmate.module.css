@@ -24,19 +24,19 @@
   /* background-color: blue; */
   width: 100%; /*98% of the parent width*/
   text-align: center;
-  text-wrap: nowrap;
+  text-wrap: wrap;
   color: white;
   margin-top: 0.5rem;
   font-size: clamp(2.5rem, 5vw, 6.5rem);
   text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .main-section-two > :first-child {
     font-size: clamp(1.8rem, 5vw, 4rem);
     text-wrap: wrap;
   }
-}
+} */
 
 .main-section-two > :last-child {
   width: 96%;
