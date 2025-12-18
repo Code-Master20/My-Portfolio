@@ -34,6 +34,7 @@
 @media (max-width: 400px) {
   .main-section-two > :first-child {
     font-size: clamp(1.8rem, 5vw, 4rem);
+    text-wrap: wrap;
   }
 }
 
