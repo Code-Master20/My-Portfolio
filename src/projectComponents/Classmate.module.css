@@ -20,7 +20,7 @@
   row-gap: 2rem;
 }
 
-.main-section-two > :first-child {
+.main-section-two h1 {
   /* background-color: blue; */
   width: 100%; /*98% of the parent width*/
   text-align: center;
@@ -31,12 +31,11 @@
   text-shadow: 3px 4px 5px rgba(0, 0, 0, 0.6);
 }
 
-/* @media (max-width: 400px) {
-  .main-section-two > :first-child {
-    font-size: clamp(1.8rem, 5vw, 4rem);
-    text-wrap: wrap;
+@media (max-width: 400px) {
+  .main-section-two h1 {
+    outline: 0.2rem solid greenyellow;
   }
-} */
+}
 
 .main-section-two > :last-child {
   width: 96%;
