@@ -12,16 +12,20 @@ export const Classmate = () => {
   //navigating with horizontal swipe on mobile / tablet
   const navigate = useNavigate();
   const startX = useRef(0);
+  const startY = useRef(0);
+  const threshold = 50;
 
   const handlePointerDown = (e) => {
     startX.current = e.clientX;
+    startY.current = e.clientY;
   };
 
   const handlePointerUp = (e) => {
-    const diff = e.clientX - startX.current;
+    const diffX = e.clientX - startX.current;
+    const diffY = e.clientY - startY.current;
 
-    if (Math.abs(diff) > 50) {
-      diff > 0
+    if (Math.abs(diffX) > threshold && Math.abs(diffX) > Math.abs(diffY)) {
+      diffX > 0
         ? navigate("/projects/class-mate")
         : navigate("/projects/may-rig");
     }
