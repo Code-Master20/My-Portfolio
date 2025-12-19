@@ -13,7 +13,7 @@ export const Classmate = () => {
           <div className={styles["img-container"]}>
             <button
               className={`${styles["next-btn"]}`}
-              onClick={() => navigate("/projects/may-rig")}
+              // onClick={() => navigate("/projects/may-rig")}
             >
               next
             </button>
