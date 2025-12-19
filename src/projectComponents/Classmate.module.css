@@ -28,9 +28,6 @@
   color: white;
   margin-top: 0.5rem;
   font-size: clamp(2.5rem, 5vw, 6.5rem);
-  /* -webkit-text-stroke: 1px rgb(243, 9, 9);
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black; */
   text-shadow: 0px 1.5px 8px rgba(0, 0, 0, 0.5);
   text-transform: capitalize;
 }
@@ -68,7 +65,7 @@
 }
 
 .img-container button {
-  min-width: 6rem;
+  /* min-width: 6rem;
   min-height: 2rem;
   text-align: center;
   color: white;
@@ -85,18 +82,18 @@
     background-color 0.3s ease-in-out 0ms, padding-right 0.3s ease-in-out 0ms,
     border-radius 0.3s ease-in-out 0ms, padding-left 0.3s ease-in-out 0ms,
     border-top-left-radius 0.3s ease-in-out 0ms,
-    border-bottom-left-radius 0.3s ease-in-out 0ms, text-align 0.3s ease-in 1s;
+    border-bottom-left-radius 0.3s ease-in-out 0ms, text-align 0.3s ease-in 1s; */
 }
 
 .img-container button:active {
-  transform: translateX(-2px);
+  /* transform: translateX(-2px);
   background-color: rgba(5, 45, 255, 0.7);
   text-align: right;
   padding-right: 0.5rem;
   padding-left: 0;
   border-radius: none;
   border-top-left-radius: 4rem 1.5rem;
-  border-bottom-left-radius: 4rem 1.5rem;
+  border-bottom-left-radius: 4rem 1.5rem; */
 }
 
 .main-content-container > :last-child {
@@ -188,7 +185,7 @@
   }
 
   .img-container button {
-    min-width: 10rem;
+    /* min-width: 10rem;
     min-height: 4rem;
     border-radius: 0.5rem 2rem/2rem 3.5rem;
     transition: transform 0.3s ease-in-out 0ms,
@@ -196,18 +193,18 @@
       padding-left 0.3s ease-in-out 0ms, border-radius 0.3s ease-in-out 0ms,
       border-top-left-radius 0.3s ease-in-out 0ms,
       border-bottom-left-radius 0.3s ease-in-out 0ms text-align 0.3s ease-in-out
-        1s;
+        1s; */
   }
 
   .img-container button:active {
-    transform: translateX(-2px);
+    /* transform: translateX(-2px);
     background-color: rgba(5, 45, 255, 0.7);
     text-align: right;
     padding-right: 0.2rem;
     padding-left: 0;
     border-radius: none;
     border-top-left-radius: 6rem 2rem;
-    border-bottom-left-radius: 6rem 2rem;
+    border-bottom-left-radius: 6rem 2rem; */
   }
 
   .img-container img {
