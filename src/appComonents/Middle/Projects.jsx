@@ -40,7 +40,7 @@ export const Projects = () => {
 
   return (
     <>
-      {parentPageActive === true && (
+      {parentPageActive === true ? (
         <main className={`${styles["main-section-one"]}`}>
           {isProjectActive === false && (
             <div
@@ -163,9 +163,9 @@ export const Projects = () => {
             {/* </div> */}
           </section>
         </main>
+      ) : (
+        <Outlet />
       )}
-
-      <Outlet setParentPageActive={setParentPageActive} />
     </>
   );
 };
