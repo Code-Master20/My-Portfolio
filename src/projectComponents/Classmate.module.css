@@ -162,13 +162,19 @@
 }
 
 /* min-height handle for tablets  later */
-@media (min-width: 600px) {
+
+@media (min-width: 400px) {
   .main-content-container > :first-child {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    column-gap: 4rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .main-content-container > :first-child {
+    justify-content: center;
   }
 
   .img-container button {
