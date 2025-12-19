@@ -161,7 +161,7 @@
 
 @media (min-width: 600px) {
   .main-section-two h1 {
-    -webkit-text-stroke: 1px rgb(243, 9, 9);
+    -webkit-text-stroke: 1px rgba(243, 9, 9, 0.4);
     text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
       1px 1px 0 black;
   }
