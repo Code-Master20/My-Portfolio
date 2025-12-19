@@ -1,12 +1,38 @@
 import styles from "./Classmate.module.css";
 import projectImg from "../assets/ClassMate-App.png";
 import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 export const Classmate = () => {
+  /*
+  It removes direction and gives distance only.
+  Math.abs(-80) → 80
+  Math.abs(80)  → 80
+  */
+  //navigating with horizontal swipe on mobile / tablet
   const navigate = useNavigate();
+  const startX = useRef(0);
+
+  const handlePointerDown = (e) => {
+    startX.current = e.clientX;
+  };
+
+  const handlePointerUp = (e) => {
+    const diff = e.clientX - startX.current;
+
+    if (Math.abs(diff) > 50) {
+      diff > 0
+        ? navigate("/projects/may-rig")
+        : navigate("/projects/class-mate");
+    }
+  };
 
   return (
-    <main className={styles["main-section-one"]}>
+    <main
+      className={styles["main-section-one"]}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+    >
       <section className={styles["main-section-two"]}>
         <h1>classmate a social media like website.</h1>
         <article className={styles["main-content-container"]}>
