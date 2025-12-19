@@ -305,4 +305,11 @@
 }
 
 @media (min-width: 1280px) {
+  .main-content-container > :last-child {
+    width: 70%;
+  }
+
+  .project-des-container div {
+    width: 85%;
+  }
 }
