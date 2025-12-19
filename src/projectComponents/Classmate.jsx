@@ -22,8 +22,8 @@ export const Classmate = () => {
 
     if (Math.abs(diff) > 50) {
       diff > 0
-        ? navigate("/projects/may-rig")
-        : navigate("/projects/class-mate");
+        ? navigate("/projects/class-mate")
+        : navigate("/projects/may-rig");
     }
   };
 
@@ -39,7 +39,7 @@ export const Classmate = () => {
           <div className={styles["img-container"]}>
             <button
               className={`${styles["next-btn"]}`}
-              // onClick={() => navigate("/projects/may-rig")}
+              onClick={() => navigate("/projects/may-rig")}
             >
               next
             </button>
