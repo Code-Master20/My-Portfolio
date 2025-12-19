@@ -28,9 +28,10 @@
   color: white;
   margin-top: 0.5rem;
   font-size: clamp(2.5rem, 5vw, 6.5rem);
-  -webkit-text-stroke: 1px rgb(243, 9, 9);
+  /* -webkit-text-stroke: 1px rgb(243, 9, 9);
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black;
+    1px 1px 0 black; */
+  text-shadow: 0px 1.5px 8px rgba(0, 0, 0, 0.5);
   text-transform: capitalize;
 }
 
@@ -173,6 +174,11 @@
 }
 
 @media (min-width: 600px) {
+  .main-section-two h1 {
+    -webkit-text-stroke: 1px rgb(243, 9, 9);
+    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+      1px 1px 0 black;
+  }
   .main-content-container > :first-child {
     width: 100%;
     display: flex;
