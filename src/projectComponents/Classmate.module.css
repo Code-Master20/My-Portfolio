@@ -69,7 +69,7 @@
   color: white;
   background-color: cadetblue;
   padding: 0.5rem 1rem;
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.5rem, 4vw, 3rem);
   font-weight: 600;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6);
   letter-spacing: 0.5px;
@@ -174,26 +174,15 @@
   }
 
   .img-container button {
-    /* min-width: 10rem;
-    min-height: 4rem;
-    border-radius: 0.5rem 2rem/2rem 3.5rem;
-    transition: transform 0.3s ease-in-out 0ms,
-      background-color 0.3s ease-in-out 0ms, padding-right 0.3s ease-in-out 0ms,
-      padding-left 0.3s ease-in-out 0ms, border-radius 0.3s ease-in-out 0ms,
-      border-top-left-radius 0.3s ease-in-out 0ms,
-      border-bottom-left-radius 0.3s ease-in-out 0ms text-align 0.3s ease-in-out
-        1s; */
+    padding: 0.5rem 0rem;
+    transition: all 0.2s ease-in-out 1ms;
   }
 
   .img-container button:active {
-    /* transform: translateX(-2px);
-    background-color: rgba(5, 45, 255, 0.7);
-    text-align: right;
-    padding-right: 0.2rem;
-    padding-left: 0;
-    border-radius: none;
-    border-top-left-radius: 6rem 2rem;
-    border-bottom-left-radius: 6rem 2rem; */
+    transform: translateX(-15px);
+    border-bottom-left-radius: 7rem 3rem;
+    border-top-left-radius: 7rem 3rem;
+    outline: greenyellow groove 0.5px;
   }
 
   .img-container img {
