@@ -1,14 +1,22 @@
 import styles from "./Classmate.module.css";
 import projectImg from "../assets/ClassMate-App.png";
+import { useNavigate } from "react-router-dom";
 
 export const Classmate = () => {
+  const navigate = useNavigate();
+
   return (
     <main className={styles["main-section-one"]}>
       <section className={styles["main-section-two"]}>
         <h1>classmate a social media like website.</h1>
         <article className={styles["main-content-container"]}>
           <div className={styles["img-container"]}>
-            <button className={`${styles["next-btn"]}`}>next</button>
+            <button
+              className={`${styles["next-btn"]}`}
+              onClick={() => navigate("/projects/may-rig")}
+            >
+              next
+            </button>
             <img src={projectImg} alt="" />
           </div>
           <div className={styles["project-des-container"]}>
