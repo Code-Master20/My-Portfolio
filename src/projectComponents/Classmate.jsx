@@ -8,7 +8,7 @@ export const Classmate = () => {
         <h1>classmate a social media like website.</h1>
         <article className={styles["main-content-container"]}>
           <div className={styles["img-container"]}>
-            <button>next</button>
+            <button className={`${styles["next-btn"]}`}>next</button>
             <img src={projectImg} alt="" />
           </div>
           <div className={styles["project-des-container"]}>
