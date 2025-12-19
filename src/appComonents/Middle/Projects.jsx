@@ -18,47 +18,19 @@ export const Projects = () => {
     }, 2500);
   };
 
-  //navigation for different projects on learn more clicked
-  const parentTab = JSON.parse(localStorage.getItem("parentPageActive"));
-  const pageState =
-    parentTab === null || parentTab === undefined ? true : parentTab;
-  const navigate = useNavigate();
-  const [parentPageActive, setParentPageActive] = useState(pageState);
-
-  useEffect(() => {
-    const parentTab = JSON.parse(localStorage.getItem("parentPageActive"));
-    const navigatedTab = JSON.parse(localStorage.getItem("navigatedTab"));
-
-    if (
-      (parentTab !== undefined || parentTab !== null) &&
-      parentTab === false
-    ) {
-      setIsProjectActive(parentTab);
-      navigate(`/projects/${navigatedTab}`);
-    }
-  }, []);
-
-  const handleNavigate = (navVal) => {
-    setParentPageActive((prev) => !prev);
-    navigate(`/projects/${navVal}`);
-    localStorage.setItem("navigatedTab", JSON.stringify(navVal));
-    localStorage.setItem("parentPageActive", JSON.stringify(false));
-  };
-
-  /*reading current path location of the user after user clicked on projects-nav
-   or after localStorage items are removed */
+  //tracking current visited path(url/route) with useLocation()-method
   const location = useLocation();
-  useEffect(() => {
-    if (location.pathname === "/projects") {
-      setParentPageActive((prev) => !prev);
-      localStorage.removeItem("parentPageActive");
-      localStorage.removeItem("navigatedTab");
-    }
-  }, [location.pathname]);
+  const parentPageActive = location.pathname === "/projects";
+
+  // redirecting to the relevent project page(classmate, dolists, lets-forecast, etc) on clicking learn more button
+  const navigate = useNavigate();
+  const handleNavigate = (navVal) => {
+    navigate(`/projects/${navVal}`);
+  };
 
   return (
     <>
-      {parentPageActive === true ? (
+      {parentPageActive ? (
         <main className={`${styles["main-section-one"]}`}>
           {isProjectActive === false && (
             <div
