@@ -5,24 +5,13 @@ import modernTodoAppImg from "../../assets/Modern-Todo-App.png";
 import technoTalkAppImg from "../../assets/Techno-Talk-Pvt-Ltd.png";
 import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
-import { useRef, useEffect, useState } from "react";
-import { useNavigate, Outlet } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, Outlet, useLocation } from "react-router-dom";
 
 export const Projects = () => {
-  const parentRef = useRef(null);
-  const [childrens, setChildrens] = useState([]);
-
-  useEffect(() => {
-    if (parentRef.current) {
-      const children = parentRef.current.children;
-      setChildrens(children);
-    }
-  }, []);
-
   //temporary reflect to users for project link
   const [isProjectActive, setIsProjectActive] = useState(true);
   const handleRedirect = () => {
-    console.log("helllo");
     setIsProjectActive((prev) => !prev);
     setTimeout(() => {
       setIsProjectActive((prev) => !prev);
@@ -30,13 +19,42 @@ export const Projects = () => {
   };
 
   //navigation for different projects on learn more clicked
+  const parentTab = JSON.parse(localStorage.getItem("parentPageActive"));
+  const pageState =
+    parentTab === null || parentTab === undefined ? true : parentTab;
   const navigate = useNavigate();
-  const [parentPageActive, setParentPageActive] = useState(true);
+  const [parentPageActive, setParentPageActive] = useState(pageState);
+
+  useEffect(() => {
+    const parentTab = JSON.parse(localStorage.getItem("parentPageActive"));
+    const navigatedTab = JSON.parse(localStorage.getItem("navigatedTab"));
+
+    if (
+      (parentTab !== undefined || parentTab !== null) &&
+      parentTab === false
+    ) {
+      setIsProjectActive(parentTab);
+      navigate(`/projects/${navigatedTab}`);
+    }
+  }, []);
 
   const handleNavigate = (navVal) => {
     setParentPageActive((prev) => !prev);
     navigate(`/projects/${navVal}`);
+    localStorage.setItem("navigatedTab", JSON.stringify(navVal));
+    localStorage.setItem("parentPageActive", JSON.stringify(false));
   };
+
+  /*reading current path location of the user after user clicked on projects-nav
+   or after localStorage items are removed */
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/projects") {
+      setParentPageActive((prev) => !prev);
+      localStorage.removeItem("parentPageActive");
+      localStorage.removeItem("navigatedTab");
+    }
+  }, [location.pathname]);
 
   return (
     <>
@@ -64,7 +82,7 @@ export const Projects = () => {
           <div>
             <h1>My All Projects' lists :</h1>
           </div>
-          <section className={`${styles["main-section-two"]}`} ref={parentRef}>
+          <section className={`${styles["main-section-two"]}`}>
             {/* <div className={`${styles["main-section-child"]}`}> */}
             <div>
               <img
