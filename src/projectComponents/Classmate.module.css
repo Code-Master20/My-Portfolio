@@ -12,6 +12,8 @@
   flex-direction: column;
   align-items: center;
   border: none;
+  touch-action: pan-y; /* allows vertical scroll, blocks horizontal default */
+  user-select: none;
 }
 .main-section-two {
   width: 98%;
