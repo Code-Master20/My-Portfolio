@@ -42,6 +42,11 @@ export const Header = () => {
   //navigate to home on brandLogo click
   const navigate = useNavigate();
 
+  const removeLocalStorageItems = () => {
+    localStorage.removeItem("parentPageActive");
+    localStorage.removeItem("navigatedTab");
+  };
+
   return (
     <>
       <nav className={styles["main-container"]}>
@@ -98,10 +103,11 @@ export const Header = () => {
 
               {/* Projects */}
               <NavLink
-                to="/projects"
                 className={({ isActive }) =>
                   `${isActive ? styles["active-nav"] : ""}`
                 }
+                onClick={removeLocalStorageItems}
+                to="/projects"
               >
                 <GrProjects className={styles["projects"]} />
                 <span>Projects</span>
@@ -151,6 +157,7 @@ export const Header = () => {
             className={({ isActive }) =>
               `${isActive ? styles["small-nav-active"] : ""}`
             }
+            onClick={removeLocalStorageItems}
           >
             Projects
           </NavLink>
