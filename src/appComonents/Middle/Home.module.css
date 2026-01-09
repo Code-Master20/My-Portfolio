@@ -2,25 +2,122 @@
 * {
   margin: 0;
   padding: 0;
+  border: 0;
 }
 
-.main-section {
+.main-section-one {
   margin-bottom: auto;
-  min-width: 99vw;
+  width: 100vw;
   height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: hsla(301, 69%, 28%, 0.5);
-  padding-bottom: 5rem;
   z-index: 999;
 }
 
-.main-section div {
-  height: 100%;
+.main-section-two {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.main-section-two > :first-child {
+  width: 100%;
+}
+
+.owner-info {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 1rem;
+}
+
+.owner-info > :first-child {
+  min-width: 13rem;
+  max-width: 20rem;
+  height: fit-content;
+  background-color: rgb(209, 0, 205);
+}
+
+.dev-img-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  row-gap: 0.8rem;
+  align-items: center;
+  row-gap: 0.4rem;
+  box-shadow: 0px 1.5px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  padding-bottom: 0.3rem;
+}
+.dev-img-container img {
+  width: 13rem;
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
+.dev-img-container > :last-child {
+  margin-bottom: 0.2rem;
+}
+.dev-img-container p {
+  color: white;
+  font-weight: 600;
+  -webkit-text-stroke: rgba(0, 0, 0, 0.5) 0.3px;
+}
+
+.owner-info > :last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 0.2rem;
+  color: white;
+}
+
+.dev-info-container h1 {
+  text-wrap: nowrap;
+  text-transform: capitalize;
+  font-size: clamp(1.8rem, 4vw, 5rem);
+  font-weight: 800;
+}
+
+.dev-info-container h2 {
+  font-size: clamp(1.6rem, 4vw, 4rem);
+  font-weight: 800;
+}
+
+.dev-info-container h3 {
+  font-size: clamp(1.2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  word-spacing: 1px;
+  letter-spacing: 0.3px;
+  word-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
+}
+
+.dev-info-container h4 {
+  margin-top: 1rem;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.dev-info-container p {
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  line-height: 1.4rem;
+  word-break: normal;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+@media (min-width: 400px) {
+}
+
+/*
 .owner-info {
   margin-top: 0.5rem;
   padding: 0 0.5rem;
@@ -70,9 +167,6 @@
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
-
-/* .dev-info-container {
-} */
 
 .dev-info-container > div {
   height: fit-content;
@@ -176,8 +270,10 @@
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   opacity: 1;
 }
+  */
 
 /* On clicking: dim all children */
+/*
 .projects-info > div:has(*:active) > * {
   opacity: 0.3;
 }
@@ -212,15 +308,16 @@
     font-size: 1.3rem;
     font-weight: 800;
   }
-
+*/
+/*
   .dev-info-container > div > :first-child {
     font-size: 3rem;
-    background-image: url("../../assets/Modern-Todo-App.png"); /* image you want inside text */
+    background-image: url("../../assets/Modern-Todo-App.png"); image you want inside text 
     background-size: cover;
     background-position: center;
-    color: transparent; /* make the text transparent */
-    -webkit-background-clip: text; /* for Chrome, Safari */
-    background-clip: text; /* standard */
+    color: transparent;  make the text transparent 
+    -webkit-background-clip: text;  for Chrome, Safari 
+    background-clip: text;  standard 
   }
 
   .dev-info-container > div > :nth-child(2) {
@@ -285,3 +382,4 @@
     transform: scale(1.1);
   }
 }
+*/
