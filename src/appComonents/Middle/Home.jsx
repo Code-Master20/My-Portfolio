@@ -52,7 +52,7 @@ export const Home = () => {
           </div>
         </article>
         {/* My other projects' info */}
-        {/* <article className={`${styles["projects-info"]}`}>
+        <article className={`${styles["projects-info"]}`}>
           <div>
             <img src={classMateAppImg} alt="" />
             <img src={mayRigAppImg} alt="" />
@@ -61,7 +61,7 @@ export const Home = () => {
             <img src={technoTalkAppImg} alt="" />
             <img src={modernTodoAppImg} alt="" />
           </div>
-        </article> */}
+        </article>
       </section>
     </main>
   );
