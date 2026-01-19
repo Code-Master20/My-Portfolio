@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;   /* Safari / iOS */
+  -ms-user-select: none;       /* old Edge */
 }
 
 .main-section-one {

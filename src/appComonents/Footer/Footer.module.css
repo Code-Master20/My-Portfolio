@@ -4,4 +4,7 @@
   min-width: 100vw;
   min-height: auto;
   z-index: 999;
+    user-select: none;
+  -webkit-user-select: none;   /* Safari / iOS */
+  -ms-user-select: none;       /* old Edge */
 }
