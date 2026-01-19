@@ -6,8 +6,27 @@ import modernTodoAppImg from "../../assets/Modern-Todo-App.png";
 import technoTalkAppImg from "../../assets/Techno-Talk-Pvt-Ltd.png";
 import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
+import { useRef, useState} from "react";
 
 export const Home = () => {
+  //setting discrete style on identified image
+  const [active, setActive] = useState([false,false,false,false,false,false])
+  const imgRef = useRef();
+  const imgIdentify = (e) => {
+      setActive(prev => prev.map(() => false)); //set all array items to false
+    const imgs = imgRef.current.children;
+    Array.from(imgs).forEach((img, indx) => {
+      if(e.target === img) {
+     setActive(prev => prev.map((itm, idx)=> {
+      if(idx === indx) return itm = true;
+     }))
+      // console.log(indx)
+      }
+    }
+      );
+
+  };
+
   return (
     <main className={styles["main-section-one"]}>
       <section className={styles["main-section-two"]}>
@@ -53,13 +72,13 @@ export const Home = () => {
         </article>
         {/* My other projects' info */}
         <article className={`${styles["projects-info"]}`}>
-          <div>
-            <img src={classMateAppImg} alt="" />
-            <img src={mayRigAppImg} alt="" />
-            <img src={weatherAppImg} alt="" />
-            <img src={weCodeTogetherAppImg} alt="" />
-            <img src={technoTalkAppImg} alt="" />
-            <img src={modernTodoAppImg} alt="" />
+          <div ref={imgRef} onClick={imgIdentify}>
+            <img src={classMateAppImg} alt="" className={`${active[0] ? styles["identified"] : styles["firstChild"]}`} />
+            <img src={mayRigAppImg} alt="" className={`${active[1] ? styles["identified"] : styles["secondChild"]}`}/>
+            <img src={weatherAppImg} alt="" className={` ${active[2] ? styles["identified"] : styles["thirdChild"]}`}/>
+            <img src={weCodeTogetherAppImg} alt="" className={` ${active[3] ? styles["identified"] : styles["fourthChild"]}`}/>
+            <img src={technoTalkAppImg} alt="" className={`${active[4] ? styles["identified"] : styles["fifthChild"]}`}/>
+            <img src={modernTodoAppImg} alt="" className={` ${active[5] ? styles["identified"] : styles["sixthChild"]}`}/>
           </div>
         </article>
       </section>
