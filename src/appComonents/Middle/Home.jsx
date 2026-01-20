@@ -6,26 +6,46 @@ import modernTodoAppImg from "../../assets/Modern-Todo-App.png";
 import technoTalkAppImg from "../../assets/Techno-Talk-Pvt-Ltd.png";
 import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
-import { useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 
 export const Home = () => {
   //setting discrete style on identified image
-  const [active, setActive] = useState([false,false,false,false,false,false])
+  const [active, setActive] = useState([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
   const imgRef = useRef();
   const imgIdentify = (e) => {
-      setActive(prev => prev.map(() => false)); //set all array items to false
+    setActive((prev) => prev.map(() => false)); //set all array items to false
     const imgs = imgRef.current.children;
     Array.from(imgs).forEach((img, indx) => {
-      if(e.target === img) {
-     setActive(prev => prev.map((itm, idx)=> {
-      if(idx === indx) return itm = true;
-     }))
-      // console.log(indx)
+      if (e.target === img) {
+        setActive((prev) =>
+          prev.map((itm, idx) => {
+            if (idx === indx) return (itm = true);
+          }),
+        );
       }
-    }
-      );
-
+    });
   };
+
+  const [has_blur, set_has_blur] = useState(true);
+  const [runOneTime, setRunOne] = useState(false);
+  const has_blur_functionality = () => {
+    set_has_blur(false);
+    setTimeout(() => {
+      setRunOne((prev) => !prev);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    setActive((prev) => prev.map(() => false));
+    set_has_blur(true);
+  }, [runOneTime]);
 
   return (
     <main className={styles["main-section-one"]}>
@@ -73,12 +93,42 @@ export const Home = () => {
         {/* My other projects' info */}
         <article className={`${styles["projects-info"]}`}>
           <div ref={imgRef} onClick={imgIdentify}>
-            <img src={classMateAppImg} alt="" className={`${active[0] ? styles["identified"] : styles["firstChild"]}`} />
-            <img src={mayRigAppImg} alt="" className={`${active[1] ? styles["identified"] : styles["secondChild"]}`}/>
-            <img src={weatherAppImg} alt="" className={` ${active[2] ? styles["identified"] : styles["thirdChild"]}`}/>
-            <img src={weCodeTogetherAppImg} alt="" className={` ${active[3] ? styles["identified"] : styles["fourthChild"]}`}/>
-            <img src={technoTalkAppImg} alt="" className={`${active[4] ? styles["identified"] : styles["fifthChild"]}`}/>
-            <img src={modernTodoAppImg} alt="" className={` ${active[5] ? styles["identified"] : styles["sixthChild"]}`}/>
+            <img
+              onClick={has_blur_functionality}
+              src={classMateAppImg}
+              alt=""
+              className={`${active[0] ? styles["identified"] : styles["firstChild"]} ${!active[0] && !has_blur ? styles["has-blured"] : ""}`}
+            />
+            <img
+              onClick={has_blur_functionality}
+              src={mayRigAppImg}
+              alt=""
+              className={`${active[1] ? styles["identified"] : styles["secondChild"]} ${!active[1] && !has_blur ? styles["has-blured"] : ""}`}
+            />
+            <img
+              onClick={has_blur_functionality}
+              src={weatherAppImg}
+              alt=""
+              className={`${active[2] ? styles["identified"] : styles["thirdChild"]} ${!active[2] && !has_blur ? styles["has-blured"] : ""}`}
+            />
+            <img
+              onClick={has_blur_functionality}
+              src={weCodeTogetherAppImg}
+              alt=""
+              className={`${active[3] ? styles["identified"] : styles["fourthChild"]} ${!active[3] && !has_blur ? styles["has-blured"] : ""}`}
+            />
+            <img
+              onClick={has_blur_functionality}
+              src={technoTalkAppImg}
+              alt=""
+              className={`${active[4] ? styles["identified"] : styles["fifthChild"]} ${!active[4] && !has_blur ? styles["has-blured"] : ""}`}
+            />
+            <img
+              onClick={has_blur_functionality}
+              src={modernTodoAppImg}
+              alt=""
+              className={`${active[5] ? styles["identified"] : styles["sixthChild"]} ${!active[5] && !has_blur ? styles["has-blured"] : ""}`}
+            />
           </div>
         </article>
       </section>
