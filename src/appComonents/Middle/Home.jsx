@@ -34,18 +34,16 @@ export const Home = () => {
   };
 
   const [has_blur, set_has_blur] = useState(true);
-  const [runOneTime, setRunOne] = useState(false);
+  // const [runOneTime, setRunOne] = useState(false);
+  let timerId = null;
   const has_blur_functionality = () => {
     set_has_blur(false);
-    setTimeout(() => {
-      setRunOne((prev) => !prev);
+    clearTimeout(timerId);
+    timerId = setTimeout(() => {
+      set_has_blur(true);
+      setActive((prev) => prev.map(() => false));
     }, 2000);
   };
-
-  useEffect(() => {
-    setActive((prev) => prev.map(() => false));
-    set_has_blur(true);
-  }, [runOneTime]);
 
   return (
     <main className={styles["main-section-one"]}>

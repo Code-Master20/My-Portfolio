@@ -211,11 +211,11 @@
   height: 17rem;
   border-radius: 7rem;
   box-shadow: 1px 6px 2px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
-.identified:active {
-  transform: scale(1.2);
+.projects-info div img:active {
+  transform: scale(1.25);
 }
 
 .has-blured {
