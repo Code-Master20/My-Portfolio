@@ -168,6 +168,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
+  row-gap: 2rem;
 }
 .firstChild {
   width: 16rem;
