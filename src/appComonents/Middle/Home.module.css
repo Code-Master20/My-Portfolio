@@ -17,6 +17,7 @@
   align-items: center;
   background-color: hsla(301, 69%, 28%, 0.5);
   z-index: 999;
+  padding-bottom: 2rem;
 }
 
 .main-section-two {
@@ -168,7 +169,6 @@
   flex-wrap: wrap;
   gap: 0.8rem;
 }
-
 .firstChild {
   width: 16rem;
   height: 17rem;
