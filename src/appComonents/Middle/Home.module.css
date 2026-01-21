@@ -167,7 +167,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1.5rem;
 }
 .firstChild {
   width: 16rem;
