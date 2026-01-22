@@ -32,17 +32,17 @@ export const Projects = () => {
     <>
       {parentPageActive ? (
         <main className={`${styles["main-section-one"]}`}>
-          {isProjectActive === false && (
+          {/* {isProjectActive === false && (
             <div className={styles["project-default"]} style={{ color: "red" }}>
               project is under development
             </div>
-          )}
+          )} */}
           <div>
             <h1>My All Projects' lists :</h1>
           </div>
           <section className={`${styles["main-section-two"]}`}>
             {/* <div className={`${styles["main-section-child"]}`}> */}
-            <div>
+            <article>
               <img
                 src={classMateAppImg}
                 alt=""
@@ -58,8 +58,8 @@ export const Projects = () => {
                   learn more
                 </button>
               </div>
-            </div>
-            <div>
+            </article>
+            <article>
               <img src={mayRigAppImg} alt="" onDoubleClick={handleRedirect} />
               <div>
                 <h1>mayRig</h1>
@@ -71,8 +71,8 @@ export const Projects = () => {
                   learn more
                 </button>
               </div>
-            </div>
-            <div>
+            </article>
+            <article>
               <img src={weatherAppImg} alt="" onDoubleClick={handleRedirect} />
               <div>
                 <h1>letsForecast</h1>
@@ -84,8 +84,8 @@ export const Projects = () => {
                   learn more
                 </button>
               </div>
-            </div>
-            <div>
+            </article>
+            <article>
               <img
                 src={weCodeTogetherAppImg}
                 alt=""
@@ -101,8 +101,8 @@ export const Projects = () => {
                   learn more
                 </button>
               </div>
-            </div>
-            <div>
+            </article>
+            <article>
               <img
                 src={technoTalkAppImg}
                 alt=""
@@ -118,8 +118,8 @@ export const Projects = () => {
                   learn more
                 </button>
               </div>
-            </div>
-            <div>
+            </article>
+            <article>
               <img
                 src={modernTodoAppImg}
                 alt=""
@@ -135,8 +135,7 @@ export const Projects = () => {
                   learn more
                 </button>
               </div>
-            </div>
-            {/* </div> */}
+            </article>
           </section>
         </main>
       ) : (
