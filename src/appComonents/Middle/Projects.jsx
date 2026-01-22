@@ -33,21 +33,7 @@ export const Projects = () => {
       {parentPageActive ? (
         <main className={`${styles["main-section-one"]}`}>
           {isProjectActive === false && (
-            <div
-              style={{
-                position: "absolute",
-                zIndex: "99999",
-                backgroundColor: "rgba(0,0,0,0)",
-                color: "red",
-                padding: "1rem",
-                top: "49%",
-                left: "38%",
-                fontWeight: "600",
-                fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-                fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
-                borderRadius: "1rem",
-              }}
-            >
+            <div className={styles["project-default"]} style={{ color: "red" }}>
               project is under development
             </div>
           )}
