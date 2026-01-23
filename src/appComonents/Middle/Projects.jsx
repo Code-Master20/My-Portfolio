@@ -31,16 +31,11 @@ export const Projects = () => {
   return (
     <>
       {parentPageActive ? (
-        <main className={`${styles["main-section-one"]}`}>
-          {/* {isProjectActive === false && (
-            <div className={styles["project-default"]} style={{ color: "red" }}>
-              project is under development
-            </div>
-          )} */}
-          <div>
+        <main className={styles["main-sspantion-one"]}>
+          <div className={styles["main-heading"]}>
             <h1>My All Projects' lists :</h1>
           </div>
-          <section className={`${styles["main-section-two"]}`}>
+          <section className={styles["main-section-two"]}>
             {/* <div className={`${styles["main-section-child"]}`}> */}
             <article>
               <img
@@ -49,7 +44,7 @@ export const Projects = () => {
                 onDoubleClick={handleRedirect}
               />
               <div>
-                <h1>classMate</h1>
+                <span>classMate</span>
                 <button
                   onClick={() => {
                     handleNavigate("class-mate");
@@ -62,7 +57,7 @@ export const Projects = () => {
             <article>
               <img src={mayRigAppImg} alt="" onDoubleClick={handleRedirect} />
               <div>
-                <h1>mayRig</h1>
+                <span>mayRig</span>
                 <button
                   onClick={() => {
                     handleNavigate("may-rig");
@@ -75,7 +70,7 @@ export const Projects = () => {
             <article>
               <img src={weatherAppImg} alt="" onDoubleClick={handleRedirect} />
               <div>
-                <h1>letsForecast</h1>
+                <span>letsForecast</span>
                 <button
                   onClick={() => {
                     handleNavigate("lets-forecast");
@@ -92,7 +87,7 @@ export const Projects = () => {
                 onDoubleClick={handleRedirect}
               />
               <div>
-                <h1>weCode Together</h1>
+                <span>weCode Together</span>
                 <button
                   onClick={() => {
                     handleNavigate("we-code-together");
@@ -109,7 +104,7 @@ export const Projects = () => {
                 onDoubleClick={handleRedirect}
               />
               <div>
-                <h1>techTalk</h1>
+                <span>techTalk</span>
                 <button
                   onClick={() => {
                     handleNavigate("techno-talk");
@@ -126,7 +121,7 @@ export const Projects = () => {
                 onDoubleClick={handleRedirect}
               />
               <div>
-                <h1>doLists</h1>
+                <span>doLists</span>
                 <button
                   onClick={() => {
                     handleNavigate("do-lists");
