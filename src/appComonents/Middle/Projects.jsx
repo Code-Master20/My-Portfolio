@@ -5,17 +5,34 @@ import modernTodoAppImg from "../../assets/Modern-Todo-App.png";
 import technoTalkAppImg from "../../assets/Techno-Talk-Pvt-Ltd.png";
 import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
 import toast from "react-hot-toast";
 
 export const Projects = () => {
   //temporary reflect to users for project link
-  const [isProjectActive, setIsProjectActive] = useState(true);
-  const handleRedirect = () => {
-    setIsProjectActive((prev) => !prev);
+  const [isProjectActive, setIsProjectActive] = useState([
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+  ]);
+
+  const imgRef = useRef();
+  const handleRedirect = (e) => {
+    console.log(imgRef.current.children[0].children[0]);
+    Array.from(imgRef.current.children).forEach((child, idx) => {
+      if (imgRef.current.children[idx].children[0] === e.target) {
+        setIsProjectActive((prev) =>
+          prev.map((item, i) => (i === idx ? false : item)),
+        );
+      }
+    });
+
     setTimeout(() => {
-      setIsProjectActive((prev) => !prev);
+      setIsProjectActive((prev) => prev.map(() => true));
     }, 2500);
   };
 
@@ -28,20 +45,22 @@ export const Projects = () => {
   const handleNavigate = (navVal) => {
     navigate(`/projects/${navVal}`);
   };
+
   return (
     <>
       {parentPageActive ? (
         <main className={styles["main-section-one"]}>
-          {!isProjectActive && toast.error("project is under development")}
           <div className={styles["main-heading"]}>
             <h1>My All Projects' lists :</h1>
           </div>
-          <section className={styles["main-section-two"]}>
+          <section ref={imgRef} className={styles["main-section-two"]}>
             {/* <div className={`${styles["main-section-child"]}`}> */}
-            <article>
+            <article
+              className={` ${!isProjectActive[0] ? styles["project-overviewed"] : styles["normal-viewed"]}`}
+            >
               <img
                 src={classMateAppImg}
-                alt=""
+                draggable={false}
                 onDoubleClick={handleRedirect}
               />
               <div>
@@ -55,8 +74,14 @@ export const Projects = () => {
                 </button>
               </div>
             </article>
-            <article>
-              <img src={mayRigAppImg} alt="" onDoubleClick={handleRedirect} />
+            <article
+              className={` ${!isProjectActive[1] ? styles["project-overviewed"] : styles["normal-viewed"]}`}
+            >
+              <img
+                src={mayRigAppImg}
+                draggable={false}
+                onDoubleClick={handleRedirect}
+              />
               <div>
                 <span>mayRig</span>
                 <button
@@ -68,8 +93,14 @@ export const Projects = () => {
                 </button>
               </div>
             </article>
-            <article>
-              <img src={weatherAppImg} alt="" onDoubleClick={handleRedirect} />
+            <article
+              className={` ${!isProjectActive[2] ? styles["project-overviewed"] : styles["normal-viewed"]}`}
+            >
+              <img
+                src={weatherAppImg}
+                draggable={false}
+                onDoubleClick={handleRedirect}
+              />
               <div>
                 <span>letsForecast</span>
                 <button
@@ -81,10 +112,12 @@ export const Projects = () => {
                 </button>
               </div>
             </article>
-            <article>
+            <article
+              className={` ${!isProjectActive[3] ? styles["project-overviewed"] : styles["normal-viewed"]}`}
+            >
               <img
                 src={weCodeTogetherAppImg}
-                alt=""
+                draggable={false}
                 onDoubleClick={handleRedirect}
               />
               <div>
@@ -98,10 +131,12 @@ export const Projects = () => {
                 </button>
               </div>
             </article>
-            <article>
+            <article
+              className={` ${!isProjectActive[4] ? styles["project-overviewed"] : styles["normal-viewed"]}`}
+            >
               <img
                 src={technoTalkAppImg}
-                alt=""
+                draggable={false}
                 onDoubleClick={handleRedirect}
               />
               <div>
@@ -115,10 +150,12 @@ export const Projects = () => {
                 </button>
               </div>
             </article>
-            <article>
+            <article
+              className={` ${!isProjectActive[5] ? styles["project-overviewed"] : styles["normal-viewed"]}`}
+            >
               <img
                 src={modernTodoAppImg}
-                alt=""
+                draggable={false}
                 onDoubleClick={handleRedirect}
               />
               <div>

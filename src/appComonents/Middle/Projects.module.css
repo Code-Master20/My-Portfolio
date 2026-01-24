@@ -16,6 +16,7 @@
   flex-direction: column;
   justify-content: center;
   row-gap: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 .main-heading {
@@ -65,11 +66,10 @@
   z-index: 99999;
 }
 
-.main-section-two article::after {
+.normal-viewed::after {
   content: "Double click on image to enter the project";
   position: relative;
   bottom: 10rem;
-  /* left: 2%; */
   opacity: 0;
   transition: opacity 0.3s;
   background: rgba(0, 0, 0, 0.4);
@@ -77,6 +77,7 @@
   padding: 4px 8px;
   font-size: 1rem;
   text-wrap: wrap;
+  text-align: center;
 }
 
 .main-section-two article img {
@@ -123,6 +124,19 @@
 .main-section-two article div button:active {
   transform: scale(1.02);
   background-color: rgba(0, 13, 255, 0.7);
+}
+
+.project-overviewed::after {
+  content: "Project is under development";
+  position: relative;
+  bottom: 10rem;
+  color: red;
+  font-size: 1.5rem;
+  text-align: center;
+  text-wrap: wrap;
+  font-weight: 600;
+  text-shadow: 1px 2px 3px rgba(7, 7, 246, 0.4);
+  -webkit-text-stroke: 1px rgba(242, 13, 254, 0.5);
 }
 
 /*

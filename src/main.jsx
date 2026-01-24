@@ -42,6 +42,13 @@ const Router = createBrowserRouter(
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={Router}></RouterProvider>
-    <Toaster position="top-right" />
+    <Toaster
+      position="top-right"
+      toastOptions={{
+        style: {
+          zIndex: 999999,
+        },
+      }}
+    />
   </StrictMode>,
 );
