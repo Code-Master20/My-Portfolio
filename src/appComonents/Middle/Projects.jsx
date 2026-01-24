@@ -7,6 +7,7 @@ import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
 import { useEffect, useState } from "react";
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export const Projects = () => {
   //temporary reflect to users for project link
@@ -27,11 +28,11 @@ export const Projects = () => {
   const handleNavigate = (navVal) => {
     navigate(`/projects/${navVal}`);
   };
-
   return (
     <>
       {parentPageActive ? (
-        <main className={styles["main-sspantion-one"]}>
+        <main className={styles["main-section-one"]}>
+          {!isProjectActive && toast.error("project is under development")}
           <div className={styles["main-heading"]}>
             <h1>My All Projects' lists :</h1>
           </div>

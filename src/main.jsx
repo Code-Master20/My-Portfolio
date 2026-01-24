@@ -11,6 +11,7 @@ import { Letsforecast } from "./projectComponents/Letsforecast.jsx";
 import { Wecodetogether } from "./projectComponents/Wecodetogether.jsx";
 import { Technotalk } from "./projectComponents/Technotalk.jsx";
 import { Dolists } from "./projectComponents/Dolists.jsx";
+import { Toaster } from "react-hot-toast";
 
 // import {}
 import {
@@ -23,9 +24,10 @@ import {
 const Router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="" element={<Home />}></Route>
+      <Route index element={<Home />}></Route>{" "}
+      {/*<Route path="" element={<Home/>}></Route>*/}
       <Route path="/about" element={<About />} />
-      <Route path="/projects/" element={<Projects />}>
+      <Route path="projects" element={<Projects />}>
         <Route path="class-mate" element={<Classmate />} />
         <Route path="may-rig" element={<Mayrig />} />
         <Route path="lets-forecast" element={<Letsforecast />} />
@@ -34,11 +36,12 @@ const Router = createBrowserRouter(
         <Route path="do-lists" element={<Dolists />} />
       </Route>
       <Route path="/contact" element={<Contact />} />
-    </Route>
-  )
+    </Route>,
+  ),
 );
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={Router}></RouterProvider>
-  </StrictMode>
+    <Toaster position="top-right" />
+  </StrictMode>,
 );

@@ -40,14 +40,18 @@
 }
 
 .main-section-two article {
+  box-sizing: content-box;
   background-color: rgba(38, 197, 225, 0.726);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  row-gap: 1rem;
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   width: 15rem;
-  height: 15rem;
+  height: 15.5rem;
   padding-bottom: 0.5rem;
   transition: transform 0.3s ease-in;
 }
@@ -55,31 +59,30 @@
 .main-section-two article:hover {
   transform: scale(1.09);
 }
-/* 
+
 .main-section-two article:hover::after {
   opacity: 1;
   z-index: 99999;
-} */
+}
 
-/* .main-section-two article::after {
+.main-section-two article::after {
   content: "Double click on image to enter the project";
   position: relative;
   bottom: 10rem;
-  left: 3%;
+  /* left: 2%; */
   opacity: 0;
   transition: opacity 0.3s;
-  background: rgba(0, 0, 0, 0.1);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  color: #04d4f8;
   padding: 4px 8px;
   font-size: 1rem;
   text-wrap: wrap;
-} */
+}
 
 .main-section-two article img {
   width: 15rem;
   height: 12rem;
-  border-top-left-radius: 1.5rem;
-  border-top-right-radius: 1.5rem;
+  border-radius: 1.5rem;
 }
 
 .main-section-two article div {
@@ -109,14 +112,18 @@
   padding: 0.2rem 0.5rem;
   background-color: rgba(0, 13, 255, 0.4);
   border: none;
-  /* border-radius: 0.5rem; */
-  transition: background-color 0.2s ease;
+  border-radius: 0.2rem;
+  padding: 0.5rem;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+  cursor: pointer;
 }
 
-/* .main-section-two article div:last-child:active {
-  background: none;
-  background-color: rgb(14, 14, 117);
-} */
+.main-section-two article div button:active {
+  transform: scale(1.02);
+  background-color: rgba(0, 13, 255, 0.7);
+}
 
 /*
 @media (min-width: 400px) {
