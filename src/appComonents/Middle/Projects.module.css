@@ -17,6 +17,7 @@
   justify-content: center;
   row-gap: 1.5rem;
   padding-bottom: 2rem;
+  touch-action: none;
 }
 
 .main-heading {

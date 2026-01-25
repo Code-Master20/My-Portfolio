@@ -4,6 +4,7 @@
   max-height: 6vh;
   background-color: rgb(201, 129, 41);
   z-index: 999;
+  touch-action: none;
 }
 
 .main-container div {
@@ -74,7 +75,9 @@
 .bundle-toggle {
   font-size: 1.7rem;
   fill: rgb(8, 243, 243);
-  transition: transform 0.3s ease, fill 0.2s ease;
+  transition:
+    transform 0.3s ease,
+    fill 0.2s ease;
 }
 
 .bundle-toggle:active {
@@ -86,7 +89,9 @@
 .cross-toggle {
   font-size: 1.5rem;
   fill: rgb(8, 243, 243);
-  transition: transform 0.3s ease, fill 0.2s ease;
+  transition:
+    transform 0.3s ease,
+    fill 0.2s ease;
 }
 
 .cross-toggle:active {
