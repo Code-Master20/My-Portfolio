@@ -54,11 +54,14 @@
   width: 15rem;
   height: 15.5rem;
   padding-bottom: 0.5rem;
-  transition: transform 0.3s ease-in;
+  transition:
+    transform 0.3s ease-in,
+    box-shadow 0.3s ease-in;
 }
 
 .main-section-two article:hover {
   transform: scale(1.09);
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .main-section-two article:hover::after {
