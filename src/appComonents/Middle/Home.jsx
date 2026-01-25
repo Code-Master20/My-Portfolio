@@ -7,6 +7,7 @@ import technoTalkAppImg from "../../assets/Techno-Talk-Pvt-Ltd.png";
 import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Home = () => {
   //setting discrete style on identified image
@@ -45,8 +46,31 @@ export const Home = () => {
     }, 2000);
   };
 
+  //swipe navigation determination below
+  const navigate = useNavigate();
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const threshHold = 50;
+
+  const handlePointerDown = (e) => {
+    startX.current = e.clientX;
+    startY.current = e.clientY;
+  };
+
+  const handlePointerUp = (e) => {
+    const diffX = e.clientX - startX.current;
+    const diffY = e.clientY - startY.current;
+
+    if (Math.abs(diffX) > threshHold && Math.abs(diffX) > Math.abs(diffY)) {
+      diffX > 0 ? navigate("/contact") : navigate("/about");
+    }
+  };
   return (
-    <main className={styles["main-section-one"]}>
+    <main
+      className={styles["main-section-one"]}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+    >
       <section className={styles["main-section-two"]}>
         {/* project owner info */}
         <article className={`${styles["owner-info"]}`}>

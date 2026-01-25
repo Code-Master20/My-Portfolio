@@ -11,7 +11,7 @@ export const Classmate = () => {
   */
   //navigating with horizontal swipe on mobile / tablet
   const navigate = useNavigate();
-  const startX = useRef(0);
+  const startX = useRef(0); //startX = useRef() means startX = { current: 0}, is an object
   const startY = useRef(0);
   const threshold = 50;
 

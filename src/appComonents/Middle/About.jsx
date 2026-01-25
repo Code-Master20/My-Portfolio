@@ -1,9 +1,35 @@
 import styles from "./About.module.css";
 import developerImg from "../../assets/SahidurImage.jpg";
+import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 export const About = () => {
+  //swipe navigation determination below
+  const navigate = useNavigate();
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const threshHold = 50;
+
+  const handlePointerDown = (e) => {
+    startX.current = e.clientX;
+    startY.current = e.clientY;
+  };
+
+  const handlePointerUp = (e) => {
+    const diffX = e.clientX - startX.current;
+    const diffY = e.clientY - startY.current;
+
+    if (Math.abs(diffX) > threshHold && Math.abs(diffX) > Math.abs(diffY)) {
+      diffX > 0 ? navigate("/") : navigate("/projects");
+    }
+  };
+
   return (
-    <section className={`${styles["main-section-one"]}`}>
+    <section
+      className={`${styles["main-section-one"]}`}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+    >
       <section className={`${styles["main-section-two"]}`}>
         {/* developer introduction including image */}
         <div className={`${styles["dev-intro"]}`}>

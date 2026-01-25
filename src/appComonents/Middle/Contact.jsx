@@ -8,8 +8,30 @@ import {
   FaTelegram,
 } from "react-icons/fa";
 import { MdEmail, MdCall } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
+import { useRef } from "react";
 
 export const Contact = () => {
+  //swipe navigation determination below
+  const navigate = useNavigate();
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const threshHold = 50;
+
+  const handlePointerDown = (e) => {
+    startX.current = e.clientX;
+    startY.current = e.clientY;
+  };
+
+  const handlePointerUp = (e) => {
+    const diffX = e.clientX - startX.current;
+    const diffY = e.clientY - startY.current;
+
+    if (Math.abs(diffX) > threshHold && Math.abs(diffX) > Math.abs(diffY)) {
+      diffX > 0 ? navigate("/projects") : navigate("/");
+    }
+  };
+
   //current screen-width tracker
   const [width, setWidth] = useState(window.outerWidth);
   useEffect(() => {
@@ -63,7 +85,11 @@ export const Contact = () => {
   };
 
   return (
-    <main className={styles["main-section-one"]}>
+    <main
+      className={styles["main-section-one"]}
+      onPointerDown={handlePointerDown}
+      onPointerUp={handlePointerUp}
+    >
       <section className={styles["main-section-two"]}>
         <div className={styles["main-section-child"]}>
           <h1>Contact me following the below options</h1>

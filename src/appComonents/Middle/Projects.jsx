@@ -7,7 +7,6 @@ import weatherAppImg from "../../assets/Weather-App.png";
 import weCodeTogetherAppImg from "../../assets/weCodeTogether-App.png";
 import { useRef, useState } from "react";
 import { useNavigate, Outlet, useLocation } from "react-router-dom";
-import toast from "react-hot-toast";
 
 export const Projects = () => {
   //temporary reflect to users for project link
@@ -46,10 +45,34 @@ export const Projects = () => {
     navigate(`/projects/${navVal}`);
   };
 
+  //swipe navigation determination below
+  // const navigate = useNavigate();
+  const startX = useRef(0);
+  const startY = useRef(0);
+  const threshHold = 50;
+
+  const handlePointerDown = (e) => {
+    startX.current = e.clientX;
+    startY.current = e.clientY;
+  };
+
+  const handlePointerUp = (e) => {
+    const diffX = e.clientX - startX.current;
+    const diffY = e.clientY - startY.current;
+
+    if (Math.abs(diffX) > threshHold && Math.abs(diffX) > Math.abs(diffY)) {
+      diffX > 0 ? navigate("/about") : navigate("/contact");
+    }
+  };
+
   return (
     <>
       {parentPageActive ? (
-        <main className={styles["main-section-one"]}>
+        <main
+          className={styles["main-section-one"]}
+          onPointerDown={handlePointerDown}
+          onPointerUp={handlePointerUp}
+        >
           <div className={styles["main-heading"]}>
             <h1>My All Projects' lists :</h1>
           </div>
