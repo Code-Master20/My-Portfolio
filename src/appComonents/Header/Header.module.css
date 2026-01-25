@@ -4,7 +4,7 @@
   max-height: 6vh;
   background-color: rgb(201, 129, 41);
   z-index: 999;
-  touch-action: none;
+  touch-action: pan-y; /* allows vertical scroll, blocks horizontal default */
 }
 
 .main-container div {

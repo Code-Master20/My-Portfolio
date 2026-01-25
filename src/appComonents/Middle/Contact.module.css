@@ -11,7 +11,7 @@
   width: 100vw;
   align-self: center;
   background-color: hsla(301, 69%, 28%, 0.5);
-  touch-action: none;
+  touch-action: pan-y; /* allows vertical scroll, blocks horizontal default */
 }
 
 .main-section-two {
@@ -303,7 +303,3 @@
     padding: 1rem 1.5rem;
   }
 }
-
-/* @media (min-width: 1023.99px) {
-
-} */

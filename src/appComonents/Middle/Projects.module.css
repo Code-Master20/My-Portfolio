@@ -17,7 +17,7 @@
   justify-content: center;
   row-gap: 1.5rem;
   padding-bottom: 2rem;
-  touch-action: none;
+  touch-action: pan-y; /* allows vertical scroll, blocks horizontal default */
 }
 
 .main-heading {

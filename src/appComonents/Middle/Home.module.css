@@ -18,7 +18,7 @@
   background-color: hsla(301, 69%, 28%, 0.5);
   z-index: 999;
   padding-bottom: 2rem;
-  touch-action: none;
+  touch-action: pan-y; /* allows vertical scroll, blocks horizontal default */
 }
 
 .main-section-two {
@@ -222,9 +222,6 @@
 
 .has-blured {
   filter: blur(6px);
-}
-
-@media (min-width: 400px) {
 }
 
 @media (min-width: 768px) {
