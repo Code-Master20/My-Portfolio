@@ -47,7 +47,7 @@ export const Classmate = () => {
             >
               next
             </button>
-            <img src={projectImg} alt="" />
+            <img draggable={false} src={projectImg} alt="" />
           </div>
           <div className={styles["project-des-container"]}>
             <div>

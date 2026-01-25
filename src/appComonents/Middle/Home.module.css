@@ -287,4 +287,7 @@
   .projects-info div {
     justify-content: center;
   }
+  .projects-info div img {
+    cursor: pointer;
+  }
 }

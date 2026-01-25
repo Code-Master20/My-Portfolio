@@ -52,7 +52,7 @@ export const Home = () => {
         <article className={`${styles["owner-info"]}`}>
           {/* developer image */}
           <div className={`${styles["dev-img-container"]}`}>
-            <img src={developerImg} alt="" />
+            <img draggable={false} src={developerImg} alt="" />
             <p>Mr. Sahidur Miah</p>
             <p>Web Developer(Full-Stack)</p>
           </div>
@@ -92,36 +92,42 @@ export const Home = () => {
         <article className={`${styles["projects-info"]}`}>
           <div ref={imgRef} onClick={imgIdentify}>
             <img
+              draggable={false}
               onClick={has_blur_functionality}
               src={classMateAppImg}
               alt=""
               className={`${active[0] ? styles["identified"] : styles["firstChild"]} ${!active[0] && !has_blur ? styles["has-blured"] : ""}`}
             />
             <img
+              draggable={false}
               onClick={has_blur_functionality}
               src={mayRigAppImg}
               alt=""
               className={`${active[1] ? styles["identified"] : styles["secondChild"]} ${!active[1] && !has_blur ? styles["has-blured"] : ""}`}
             />
             <img
+              draggable={false}
               onClick={has_blur_functionality}
               src={weatherAppImg}
               alt=""
               className={`${active[2] ? styles["identified"] : styles["thirdChild"]} ${!active[2] && !has_blur ? styles["has-blured"] : ""}`}
             />
             <img
+              draggable={false}
               onClick={has_blur_functionality}
               src={weCodeTogetherAppImg}
               alt=""
               className={`${active[3] ? styles["identified"] : styles["fourthChild"]} ${!active[3] && !has_blur ? styles["has-blured"] : ""}`}
             />
             <img
+              draggable={false}
               onClick={has_blur_functionality}
               src={technoTalkAppImg}
               alt=""
               className={`${active[4] ? styles["identified"] : styles["fifthChild"]} ${!active[4] && !has_blur ? styles["has-blured"] : ""}`}
             />
             <img
+              draggable={false}
               onClick={has_blur_functionality}
               src={modernTodoAppImg}
               alt=""

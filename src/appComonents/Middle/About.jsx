@@ -10,7 +10,7 @@ export const About = () => {
           <div>
             <div className={`${styles["dev-img-container"]}`}>
               <h1>About Me :</h1>
-              <img src={developerImg} alt="" />
+              <img draggable={false} src={developerImg} alt="" />
             </div>
             <div className={`${styles["dev-info-container"]}`}>
               <h1>Sahidur Miah</h1>

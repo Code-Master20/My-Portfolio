@@ -85,7 +85,7 @@ export const Contact = () => {
             </form>
             {width > 767.99 && (
               <div className={`${styles["img-container"]}`}>
-                <img src={contactImg} alt="contact-image" />
+                <img draggable={false} src={contactImg} alt="contact-image" />
               </div>
             )}
           </div>
