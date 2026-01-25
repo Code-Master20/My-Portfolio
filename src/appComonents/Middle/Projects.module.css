@@ -77,6 +77,7 @@
   transition: opacity 0.3s;
   background: rgba(0, 0, 0, 0.4);
   color: #04d4f8;
+  -webkit-text-stroke: 0.8px rgb(255, 0, 0, 0.8);
   padding: 4px 8px;
   font-size: 1rem;
   text-wrap: wrap;
@@ -138,6 +139,7 @@
   text-align: center;
   text-wrap: wrap;
   font-weight: 600;
+  background: rgba(0, 0, 0, 0.4);
   text-shadow: 1px 2px 3px rgba(7, 7, 246, 0.4);
   -webkit-text-stroke: 1px rgba(242, 13, 254, 0.5);
 }
@@ -166,6 +168,22 @@
     border-radius: 1.5rem;
     cursor: crosshair;
   }
+  .normal-viewed::after {
+    bottom: 15rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: #04d4f8;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  .project-overviewed::after {
+    bottom: 15rem;
+    color: white;
+    font-size: 2rem;
+    font-weight: 800;
+    -webkit-text-stroke: 0.5px rgba(255, 3, 3, 0.5);
+  }
+
   .main-section-two article div span {
     font-size: 1.5rem;
     font-weight: 800;
