@@ -11,16 +11,12 @@ export default async function handler(req, res) {
 
   try {
     await connectDB();
-
     const { message } = req.body;
-
     if (!message || message.trim().length === 0) {
       return res.status(400).json({ error: "Message is required" });
     }
-
     // 1️⃣ Save to DB
     await Message.create({ message: message.trim() });
-
     // 2️⃣ Send email to YOU
     await resend.emails.send({
       from: "onboarding@resend.dev",
