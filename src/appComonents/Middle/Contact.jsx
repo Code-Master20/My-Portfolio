@@ -28,7 +28,7 @@ export const Contact = () => {
     const diffY = e.clientY - startY.current;
 
     if (Math.abs(diffX) > threshHold && Math.abs(diffX) > Math.abs(diffY)) {
-      diffX > 0 ? navigate("/projects") : navigate("/");
+      diffX > 0 ? navigate("/projects") : navigate("/contact");
     }
   };
 

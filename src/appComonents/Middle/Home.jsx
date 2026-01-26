@@ -62,7 +62,7 @@ export const Home = () => {
     const diffY = e.clientY - startY.current;
 
     if (Math.abs(diffX) > threshHold && Math.abs(diffX) > Math.abs(diffY)) {
-      diffX > 0 ? navigate("/contact") : navigate("/about");
+      diffX > 0 ? navigate("/") : navigate("/about");
     }
   };
   return (
