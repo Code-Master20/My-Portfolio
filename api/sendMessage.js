@@ -1,3 +1,4 @@
+import "../env.js";
 import { Resend } from "resend";
 import { connectDB } from "../utils/connectDB.js";
 import Message from "../models/message.model.js";
