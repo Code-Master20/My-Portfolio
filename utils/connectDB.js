@@ -1,14 +1,14 @@
-import "../env.js";
 import mongoose from "mongoose";
 
 let isConnected = false;
 
 export const connectDB = async () => {
   if (isConnected) return;
+
   const URI = process.env.MONGODB_URI;
 
   if (!URI) {
-    throw new Error("MONGO_URL is not defined");
+    throw new Error("MONGODB_URI is not defined");
   }
 
   try {
@@ -16,7 +16,7 @@ export const connectDB = async () => {
     isConnected = db.connections[0].readyState;
     console.log("Database connected");
   } catch (error) {
-    console.error("Database connection failed", error);
+    console.error("Database connection failed:", error);
     throw error;
   }
 };

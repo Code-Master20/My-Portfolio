@@ -1,4 +1,3 @@
-import "../env.js";
 import { Resend } from "resend";
 import { connectDB } from "../utils/connectDB.js";
 import Message from "../models/message.model.js";
@@ -11,20 +10,25 @@ export default async function handler(req, res) {
   }
 
   try {
-    await connectDB();
     const { message } = req.body;
+
     if (!message || message.trim().length === 0) {
       return res.status(400).json({ error: "Message is required" });
     }
-    // 1️⃣ Save to DB
+
+    // 1️⃣ Connect DB
+    await connectDB();
+
+    // 2️⃣ Save to DB
     await Message.create({ message: message.trim() });
-    // 2️⃣ Send email to YOU
+
+    // 3️⃣ Send email
     await resend.emails.send({
       from: "onboarding@resend.dev",
       to: process.env.TO_EMAIL,
-      subject: "User Query",
+      subject: "New message from My-Portfolio",
       html: `
-        <h3>New Message from My-Portfolio</h3>
+        <h3>New Contact Message</h3>
         <p>${message}</p>
       `,
     });
